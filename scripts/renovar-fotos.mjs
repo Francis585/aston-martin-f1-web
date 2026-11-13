@@ -145,9 +145,8 @@ for (const t of BUSQUEDAS) {
       lic,
       autor: limpio((md.Artist || {}).value || ""),
       /* pie de foto: la descripción de Commons o, si no hay, el título del archivo */
-      pie: limpio((md.ImageDescription || md.ObjectName || {}).value || "")
-        .replace(/^\s*[\d,.]*\s*/, "")
-        .slice(0, 70) || p.title.replace(/^File:/, "").replace(/\.(jpe?g|png|webp)$/i, ""),
+      pie: (limpio((md.ImageDescription || md.ObjectName || {}).value || "") ||
+        p.title.replace(/^File:/, "")).slice(0, 70),
       fuente,
     });
   }
