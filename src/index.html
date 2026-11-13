@@ -30,14 +30,14 @@
       href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,400;0,600;0,700;0,800;1,700&family=Inter:wght@300;400;500;600;700&family=Archivo:wght@400;600;700;800;900&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="../estilos/index.css?v=20261113143746" />
-    <link rel="stylesheet" href="../estilos/temas.css?v=20261113143746" />
-    <link rel="stylesheet" href="../estilos/temporadas.css?v=20261113143746" />
-    <link rel="stylesheet" href="../estilos/layout-b.css?v=20261113143746" />
-    <link rel="icon" type="image/svg+xml" href="../imgs/am-favicon.svg?v=20261113143746" />
-    <link rel="icon" type="image/png" sizes="32x32" href="../imgs/am-favicon-32.png?v=20261113143746" />
-    <link rel="apple-touch-icon" sizes="180x180" href="../imgs/am-favicon-180.png?v=20261113143746" />
-    <script src="../js/edicion.js?v=20261113143746"></script>
+    <link rel="stylesheet" href="../estilos/index.css?v=20261113144103" />
+    <link rel="stylesheet" href="../estilos/temas.css?v=20261113144103" />
+    <link rel="stylesheet" href="../estilos/temporadas.css?v=20261113144103" />
+    <link rel="stylesheet" href="../estilos/layout-b.css?v=20261113144103" />
+    <link rel="icon" type="image/svg+xml" href="../imgs/am-favicon.svg?v=20261113144103" />
+    <link rel="icon" type="image/png" sizes="32x32" href="../imgs/am-favicon-32.png?v=20261113144103" />
+    <link rel="apple-touch-icon" sizes="180x180" href="../imgs/am-favicon-180.png?v=20261113144103" />
+    <script src="../js/edicion.js?v=20261113144103"></script>
   </head>
 
   <body>
@@ -615,10 +615,60 @@
           <div class="split split-top">
             <div class="split-media split-media-tec reveal" id="tecCard">
               <div class="tec-stage">
-                <img id="tecImg" src="../imgs/2026/amr-26-montmelo-2026.webp" alt="Aston Martin AMR26 en pista" loading="lazy" />
-                <span class="tec-sweep" aria-hidden="true"></span>
+                <div class="tec-svg" role="img" aria-label="Esquema de la unidad de potencia V6 turbo híbrida">
+                                <svg viewBox="0 0 900 505" xmlns="http://www.w3.org/2000/svg">
+                                  <g class="linias" fill="none" stroke="#e9efe4" stroke-width="2.2" opacity=".55">
+                                    <rect x="240" y="120" width="300" height="180" rx="6" />
+                                    <line x1="390" y1="120" x2="390" y2="300" />
+                                  </g>
+                
+                                  <g class="cilindros" fill="none" stroke="#cedc00" stroke-width="2.8">
+                                    <circle cx="300" cy="170" r="24" /><circle cx="360" cy="170" r="24" /><circle cx="420" cy="170" r="24" />
+                                    <circle cx="300" cy="252" r="24" /><circle cx="360" cy="252" r="24" /><circle cx="420" cy="252" r="24" />
+                                  </g>
+                
+                                  <g class="ciguenal" fill="none" stroke="#e9efe4" stroke-width="2.2" opacity=".8">
+                                    <circle cx="390" cy="352" r="26" />
+                                    <circle cx="390" cy="352" r="7" fill="#cedc00" stroke="none" />
+                                  </g>
+                
+                                  <g class="turbo" fill="none" stroke="#cedc00" stroke-width="2.8">
+                                    <circle cx="650" cy="196" r="52" />
+                                    <path d="M650 196 m-30 0 a30 30 0 1 1 30 30 a22 22 0 1 1-22-22 a14 14 0 1 1 14 14" />
+                                  </g>
+                
+                                  <g class="modulos" fill="none" stroke="#e9efe4" stroke-width="1.9" opacity=".75">
+                                    <rect x="716" y="168" width="62" height="56" rx="4" />
+                                    <rect x="252" y="392" width="120" height="64" rx="4" />
+                                    <rect x="560" y="392" width="200" height="64" rx="4" />
+                                  </g>
+                
+                                  <path class="escape" d="M540 240 L598 208" fill="none" stroke="#e9efe4" stroke-width="1.9" opacity=".6" />
+                
+                                  <g class="flujo" fill="none" stroke="#cedc00" stroke-width="2.8" stroke-dasharray="7 9" stroke-linecap="round">
+                                    <path d="M390 378 L372 392" />
+                                    <path d="M372 456 L560 424" />
+                                    <path d="M760 424 L760 236 L747 196" />
+                                    <path d="M716 196 L702 196" />
+                                  </g>
+                
+                                  <g class="rotulos" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="24" fill="#cedc00" letter-spacing="2.2">
+                                    <text x="240" y="104">V6 1.6 TURBO</text>
+                                    <text x="700" y="152" text-anchor="middle">MGU-H</text>
+                                    <text x="312" y="386" text-anchor="middle">MGU-K</text>
+                                    <text x="660" y="386" text-anchor="middle" font-size="21" letter-spacing="1.4">BATERÍA 400V</text>
+                                    <text x="650" y="278" text-anchor="middle">TURBO</text>
+                                    <text x="240" y="490" font-size="19" opacity=".8">RECUPERACIÓN 50:50 · EJE DEL CIGÜEÑAL</text>
+                                  </g>
+                
+                                  <g class="rotulos" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="19" fill="#e9efe4" opacity=".55" letter-spacing="1.2">
+                                    <text x="390" y="330" text-anchor="middle">90°</text>
+                                    <text x="560" y="212">ESCAPE</text>
+                                  </g>
+                                </svg>
+                              </div>
               </div>
-              <span class="split-tag">AMR26 · 2026</span>
+              <span class="split-tag">Honda RA626H</span>
             </div>
 
             <div class="split-body">
@@ -835,10 +885,9 @@
       </div>
     </div>
 
-    <script src="../js/f1-data.js?v=20261113143746"></script>
-    <script src="../js/index.js?v=20261113143746"></script>
-    <script src="../js/rotation.js?v=20261113143746"></script>
-    <script src="../js/momentos3d.js?v=20261113143746"></script>
-    <script src="../js/tec-card.js?v=20261113143746"></script>
+    <script src="../js/f1-data.js?v=20261113144103"></script>
+    <script src="../js/index.js?v=20261113144103"></script>
+    <script src="../js/rotation.js?v=20261113144103"></script>
+    <script src="../js/momentos3d.js?v=20261113144103"></script>
   </body>
 </html>
