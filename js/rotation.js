@@ -190,6 +190,12 @@
   if (enCarrera && gp && gp.theme) root.setAttribute("data-theme", gp.theme);
   else root.removeAttribute("data-theme");
 
+  /* tema forzado para previsualizar: ?tema=noche | america | asia | oriente | europa | mediterraneo */
+  try {
+    var forzado = new URLSearchParams(location.search).get("tema");
+    if (forzado) root.setAttribute("data-theme", forzado);
+  } catch (e) {}
+
   function pintarChip() {
     if (!chipNombre || !chipEl) return;
     if (enCarrera) {
