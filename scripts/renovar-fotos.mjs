@@ -181,6 +181,16 @@ for (const c of candidatas.slice(0, MAX)) {
         manifiesto.grupos[grupo].unshift(entrada);
       }
     }
+    /* si es una foto del coche, también entra en la banda ancha de Monoplaza:
+       así el banner se renueva solo con material reciente */
+    if (/amr|coche/i.test(nombre)) {
+      manifiesto.grupos.panoramica = manifiesto.grupos.panoramica || [];
+      if (!manifiesto.grupos.panoramica.some((f) => f.file === nombre)) {
+        manifiesto.grupos.panoramica.unshift(entrada);
+        manifiesto.grupos.panoramica = manifiesto.grupos.panoramica.slice(0, 3);
+      }
+    }
+
     /* si la foto es del coche, entra también en el escaparate de la ficha */
     if (/amr|coche|car/i.test(nombre)) {
       manifiesto.grupos.ficha = manifiesto.grupos.ficha || [];
