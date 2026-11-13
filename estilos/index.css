@@ -3808,3 +3808,22 @@ p {
   text-transform: uppercase;
   color: rgba(242, 244, 239, 0.45);
 }
+
+/* ---------- 30. Móvil: los carruseles se difuminan en el borde ---------- */
+@media (max-width: 900px) {
+  .timeline,
+  .moments,
+  .cal-track {
+    -webkit-mask-image: linear-gradient(90deg, #000 0, #000 88%, transparent 100%);
+    mask-image: linear-gradient(90deg, #000 0, #000 88%, transparent 100%);
+  }
+
+  .timeline li {
+    scroll-snap-stop: always;
+  }
+
+  /* el título de sección no se parte en tres líneas sueltas */
+  .section-title {
+    text-wrap: balance;
+  }
+}
