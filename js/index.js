@@ -980,16 +980,30 @@
       const sinRepetir = fotos.filter((f) => f.file !== heroActual);
       if (sinRepetir.length) fotos = sinRepetir;
 
+      /* la foto va con la noticia: Alonso, Stroll, coche o equipo */
+      const usadas = new Set();
+      const porTema = {
+        alonso: fotos.filter((f) => /alonso/i.test(f.file)),
+        stroll: fotos.filter((f) => /stroll/i.test(f.file)),
+        coche: fotos.filter((f) => /amr|coche/i.test(f.file)),
+      };
+      const fotoPara = (n, idx) => {
+        const pool = porTema[n.cat] && porTema[n.cat].length ? porTema[n.cat] : fotos;
+        const libre = pool.find((f) => !usadas.has(f.file));
+        const elegida = libre || pool[idx % pool.length] || fotos[idx % fotos.length];
+        if (elegida) usadas.add(elegida.file);
+        return elegida || { file: "amr26", año: new Date().getFullYear() };
+      };
+
       const top = data.items.slice(0, 3);
       grid.innerHTML = top
         .map((n, i) => {
-          const foto = fotos.length
-            ? fotos[i % fotos.length]
-            : { file: "amr26", año: new Date().getFullYear() };
+          const foto = fotoPara(n, i);
           return (
             '<a class="news-card" href="' + escapeHtml(n.link) + '" target="_blank" rel="noopener">' +
               '<div class="news-media">' +
-                '<img src="../imgs/' + foto.año + "/" + foto.file + '.webp" alt="" loading="lazy" />' +
+                '<img src="../imgs/' + foto.año + "/" + foto.file +
+                '.webp" alt="" loading="lazy" onerror="this.onerror=null;this.src=\'../imgs/2026/amr26.webp\'" />' +
               "</div>" +
               '<div class="news-body">' +
                 '<span class="news-tag">' + escapeHtml(n.source) + "</span>" +
