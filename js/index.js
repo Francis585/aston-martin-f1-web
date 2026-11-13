@@ -940,6 +940,53 @@
 
   renderLiveNews();
 
+  /* ---------- 4f. Últimas noticias de la portada ----------
+     Sustituye las tres tarjetas fijas por las tres más recientes del
+     agregador, así la home nunca enseña titulares viejos. */
+  async function renderHomeNews() {
+    const grid = $("#noticias .news-grid");
+    if (!grid) return;
+
+    try {
+      const res = await fetch("/api/news", { headers: { Accept: "application/json" } });
+      if (!res.ok) throw new Error("HTTP " + res.status);
+      const data = await res.json();
+      if (!data.items || !data.items.length) return;
+
+      let fotos = [];
+      try {
+        const fr = await fetch("../fotos.json");
+        if (fr.ok) {
+          const fj = await fr.json();
+          fotos = ((fj.grupos && fj.grupos.portada) || []).map((f) => f.file);
+        }
+      } catch (e) {}
+
+      const top = data.items.slice(0, 3);
+      grid.innerHTML = top
+        .map((n, i) => {
+          const foto = fotos.length ? fotos[i % fotos.length] : "amr26";
+          return (
+            '<a class="news-card" href="' + escapeHtml(n.link) + '" target="_blank" rel="noopener">' +
+              '<div class="news-media">' +
+                '<img src="../imgs/2026/' + foto + '.webp" alt="" loading="lazy" />' +
+              "</div>" +
+              '<div class="news-body">' +
+                '<span class="news-tag">' + escapeHtml(n.source) + "</span>" +
+                "<h3>" + escapeHtml(n.title) + "</h3>" +
+                '<p class="news-meta">' + escapeHtml(n.cat) + " · " + timeAgo(n.date) + "</p>" +
+              "</div>" +
+            "</a>"
+          );
+        })
+        .join("");
+    } catch (e) {
+      /* si falla se quedan las tarjetas que hay en el HTML */
+    }
+  }
+
+  renderHomeNews();
+
   /* ---------- 4e. Vídeos del canal oficial ---------- */
   const videoGrid = $("#videoGrid");
 
