@@ -144,6 +144,10 @@ for (const t of BUSQUEDAS) {
       url: ii.thumburl,
       lic,
       autor: limpio((md.Artist || {}).value || ""),
+      /* pie de foto: la descripción de Commons o, si no hay, el título del archivo */
+      pie: limpio((md.ImageDescription || md.ObjectName || {}).value || "")
+        .replace(/^\s*[\d,.]*\s*/, "")
+        .slice(0, 70) || p.title.replace(/^File:/, "").replace(/\.(jpe?g|png|webp)$/i, ""),
       fuente,
     });
   }
@@ -176,7 +180,7 @@ for (const c of candidatas.slice(0, MAX)) {
       continue;
     }
 
-    const entrada = { file: nombre, alta: HOY, temporada: TEMPORADA };
+    const entrada = { file: nombre, alta: HOY, temporada: TEMPORADA, pie: c.pie };
     for (const grupo of ["galeria", "coche", "portada"]) {
       if (!manifiesto.grupos[grupo].some((f) => f.file === nombre)) {
         manifiesto.grupos[grupo].unshift(entrada);
