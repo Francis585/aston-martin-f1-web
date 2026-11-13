@@ -97,6 +97,28 @@ function slug(titulo) {
     .slice(0, 48);
 }
 
+/* huella perceptual: evita dar de alta fotos casi iguales a las que ya hay */
+function ahash(fichero) {
+  try {
+    const bruto = execFileSync(FF, ["-v", "error", "-i", fichero, "-vf", "scale=16:16,format=gray", "-f", "rawvideo", "-"]);
+    if (bruto.length < 256) return null;
+    const vals = Array.from(bruto.slice(0, 256));
+    const media = vals.reduce((a, b) => a + b, 0) / 256;
+    let bits = 0n;
+    vals.forEach((v, i) => { if (v > media) bits |= 1n << BigInt(i); });
+    return bits;
+  } catch {
+    return null;
+  }
+}
+
+function parecido(a, b) {
+  if (a == null || b == null) return false;
+  let x = a ^ b, n = 0;
+  while (x) { n += Number(x & 1n); x >>= 1n; }
+  return n <= 10;
+}
+
 function convertir(origen, destino) {
   execFileSync(FF, ["-y", "-loglevel", "error", "-i", origen, "-vf", "scale=1600:-2", "-quality", "80", destino]);
 }
@@ -142,6 +164,17 @@ for (const c of candidatas.slice(0, MAX)) {
     if (!r.ok) throw new Error("HTTP " + r.status);
     writeFileSync(tmp, Buffer.from(await r.arrayBuffer()));
     convertir(tmp, destino);
+    /* si se parece demasiado a una foto que ya está en portada, se descarta */
+    const huella = ahash(destino);
+    const repetida = manifiesto.grupos.portada.some((f) => {
+      const ruta = join(carpeta, f.file + ".webp");
+      return existsSync(ruta) && parecido(huella, ahash(ruta));
+    });
+    if (repetida) {
+      console.log("  · descartada por parecerse a otra:", nombre);
+      continue;
+    }
+
     const entrada = { file: nombre, alta: HOY, temporada: 2026 };
     for (const grupo of ["galeria", "coche", "portada"]) {
       if (!manifiesto.grupos[grupo].some((f) => f.file === nombre)) {
@@ -178,6 +211,13 @@ for (const grupo of ["portada", "coche"]) {
       .slice().sort((a, b) => new Date(b.alta) - new Date(a.alta)).slice(0, 3);
   }
 }
+
+/* la portada y la ficha se quedan solo con lo más reciente: las fotos
+   que salen de la ventana no vuelven nunca (siguen en la galería) */
+const RECORTE_PORTADA = 6;
+manifiesto.grupos.portada = manifiesto.grupos.portada.slice(0, RECORTE_PORTADA);
+manifiesto.grupos.coche = manifiesto.grupos.coche.slice(0, 8);
+manifiesto.grupos.ficha = (manifiesto.grupos.ficha || []).slice(0, 4);
 
 for (const grupo of Object.keys(manifiesto.grupos)) {
   manifiesto.grupos[grupo].sort((a, b) => new Date(b.alta) - new Date(a.alta));

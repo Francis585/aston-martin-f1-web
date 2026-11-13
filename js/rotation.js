@@ -78,6 +78,35 @@
     "stroll-china-2",
   ];
 
+  /* Paleta y etiqueta de cada circuito. Se usa sobre el calendario que
+     devuelve la API, así que sirve para cualquier temporada. */
+  var CIRCUITOS = {
+    albert_park: { tema: "oceania", edicion: "Edición del Pacífico" },
+    shanghai: { tema: "asia", edicion: "Edición de Asia" },
+    suzuka: { tema: "asia", edicion: "Edición de Asia" },
+    bahrain: { tema: "oriente", edicion: "Edición del desierto" },
+    jeddah: { tema: "oriente", edicion: "Edición del desierto" },
+    miami: { tema: "america", edicion: "Edición americana" },
+    villeneuve: { tema: "america", edicion: "Edición americana" },
+    monaco: { tema: "mediterraneo", edicion: "Edición mediterránea" },
+    catalunya: { tema: "mediterraneo", edicion: "Edición mediterránea" },
+    madring: { tema: "mediterraneo", edicion: "Edición mediterránea" },
+    red_bull_ring: { tema: "europa", edicion: "Edición de Europa" },
+    silverstone: { tema: "europa", edicion: "Edición de Europa" },
+    spa: { tema: "europa", edicion: "Edición de Europa" },
+    hungaroring: { tema: "mediterraneo", edicion: "Edición mediterránea" },
+    zandvoort: { tema: "europa", edicion: "Edición de Europa" },
+    monza: { tema: "mediterraneo", edicion: "Edición mediterránea" },
+    baku: { tema: "oriente", edicion: "Edición del desierto" },
+    marina_bay: { tema: "noche", edicion: "Edición nocturna" },
+    americas: { tema: "america", edicion: "Edición americana" },
+    rodriguez: { tema: "america", edicion: "Edición americana" },
+    interlagos: { tema: "america", edicion: "Edición americana" },
+    vegas: { tema: "noche", edicion: "Edición nocturna" },
+    losail: { tema: "noche", edicion: "Edición nocturna" },
+    yas_marina: { tema: "noche", edicion: "Edición nocturna" },
+  };
+
   /* ---------- 2. GP activo y siguiente ---------- */
   function hoy() {
     var d = new Date();
@@ -126,11 +155,83 @@
   if (enCarrera && gp && gp.theme) root.setAttribute("data-theme", gp.theme);
   else root.removeAttribute("data-theme");
 
+  function pintarChip() {
+    if (!chipNombre || !chipEl) return;
+    if (enCarrera) {
+      chipNombre.textContent = "GP de " + (gp.gp === gp.lugar ? gp.gp : gp.gp + " · " + gp.lugar);
+      if (chipEdicion) chipEdicion.textContent = gp.edicion || "";
+      chipEl.classList.remove("is-between");
+      if (chipCount) chipCount.style.display = "";
+    } else {
+      var sig = info.siguiente;
+      if (sig) {
+        var dias = Math.round((fecha(sig.start) - hoy()) / 86400000);
+        chipNombre.textContent =
+          "Próximo GP · " + (sig.gp === sig.lugar ? sig.gp : sig.gp + " · " + sig.lugar);
+        if (chipEdicion) chipEdicion.textContent = dias <= 0 ? "esta semana" : "en " + dias + " días";
+      } else {
+        chipNombre.textContent = "Temporada " + gp.start.slice(0, 4) + " · finalizada";
+        if (chipEdicion) chipEdicion.textContent = "balance completo";
+      }
+      chipEl.classList.add("is-between");
+      if (chipCount) chipCount.style.display = "none";
+    }
+  }
+
+  /* ---------- 3b. Calendario real desde la API ----------
+     Si responde, sustituye el calendario local: así el chip, la paleta y
+     el «próximo GP» funcionan también la temporada que viene. */
+  (function cargarCalendario() {
+    var añoActual = new Date().getFullYear();
+    fetch("https://api.jolpi.ca/ergast/f1/" + añoActual + ".json", {
+      headers: { Accept: "application/json" },
+    })
+      .then(function (r) { return r.ok ? r.json() : null; })
+      .then(function (j) {
+        var carreras = j && j.MRData && j.MRData.RaceTable && j.MRData.RaceTable.Races;
+        if (!carreras || !carreras.length) return;
+
+        var nuevo = carreras.map(function (r) {
+          var cid = r.Circuit.circuitId;
+          var mapa = CIRCUITOS[cid] || { tema: "europa", edicion: "Edición de Europa" };
+          var nombre = r.raceName.replace(/ Grand Prix$/, "");
+          var fotosGp = [];
+          for (var i = 0; i < CAL.length; i++) {
+            if (CAL[i].gp === nombre) { fotosGp = CAL[i].fotos || []; break; }
+          }
+          return {
+            r: Number(r.round),
+            gp: nombre,
+            lugar: r.Circuit.Location.locality,
+            start: r.date,
+            theme: mapa.tema,
+            edicion: mapa.edicion,
+            fotos: fotosGp,
+          };
+        });
+
+        if (!nuevo.length) return;
+        CAL.length = 0;
+        Array.prototype.push.apply(CAL, nuevo);
+
+        info = gpActivo(hoy());
+        gp = info.activo;
+        enCarrera = enFinDeSemana(gp);
+        if (enCarrera && gp.theme) root.setAttribute("data-theme", gp.theme);
+        else root.removeAttribute("data-theme");
+        pintarChip();
+      })
+      .catch(function () { /* se queda el calendario local */ });
+  })();
+
   /* ---------- 4. Portada: rotación con fundido ---------- */
   var heroImg = document.querySelector(".hero-media img");
   var pool = (gp && gp.fotos && gp.fotos.length ? gp.fotos : PORTADA_GENERICA).slice();
   var poolIdx = 0;
   var chipCount = null;
+  var chipNombre = null;
+  var chipEdicion = null;
+  var chipEl = null;
 
   function pintarContador() {
     if (chipCount) chipCount.textContent = poolIdx + 1 + " / " + pool.length;
@@ -195,23 +296,10 @@
 
     /* En fin de semana de carrera: el GP y su edición.
        Fuera de él: cuánto queda para el siguiente. */
-    if (enCarrera) {
-      nombre.textContent = "GP de " + (gp.gp === gp.lugar ? gp.gp : gp.gp + " · " + gp.lugar);
-      edicion.textContent = gp.edicion || "";
-    } else {
-      var sig = info.siguiente;
-      if (sig) {
-        var dias = Math.round((fecha(sig.start) - hoy()) / 86400000);
-        nombre.textContent =
-          "Próximo GP · " + (sig.gp === sig.lugar ? sig.gp : sig.gp + " · " + sig.lugar);
-        edicion.textContent = dias <= 0 ? "esta semana" : "en " + dias + " días";
-      } else {
-        nombre.textContent = "Temporada " + gp.start.slice(0, 4) + " · finalizada";
-        edicion.textContent = "balance completo";
-      }
-      chipCount.style.display = "none";
-      chip.classList.add("is-between");
-    }
+    chipNombre = nombre;
+    chipEdicion = edicion;
+    chipEl = chip;
+    pintarChip();
 
     chip.appendChild(dot);
     chip.appendChild(nombre);
@@ -365,9 +453,15 @@
     if (!m || !m.grupos) return;
     var maxDias = (m.vida && m.vida.vigente_dias) || VIDA_POR_DEFECTO;
 
-    var p = intercalar(vigentes(m.grupos.portada, maxDias).map(function (f) {
-      return f.file;
-    }));
+    /* solo las 6 más recientes: cuando llega material nuevo, las viejas
+       salen del pool y no vuelven a aparecer */
+    var p = intercalar(
+      vigentes(m.grupos.portada, maxDias)
+        .slice(0, 6)
+        .map(function (f) {
+          return f.file;
+        })
+    );
     var c = intercalar(vigentes(m.grupos.coche, maxDias).map(function (f) {
       return f.file;
     }));

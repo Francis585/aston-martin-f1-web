@@ -9,11 +9,6 @@
         "temporada": 2026
       },
       {
-        "file": "fia-f1-austria-2026-nr-14-alonso-4",
-        "alta": "2026-11-13",
-        "temporada": 2026
-      },
-      {
         "file": "fia-f1-austria-2026-nr-14-alonso-2",
         "alta": "2026-11-13",
         "temporada": 2026
@@ -31,56 +26,6 @@
       {
         "file": "2026-chinese-gp-aston-martin-fernando-alonso-fp1",
         "alta": "2026-11-12",
-        "temporada": 2026
-      },
-      {
-        "file": "alonso-spa",
-        "alta": "2026-11-12",
-        "temporada": 2026
-      },
-      {
-        "file": "amr26-zandvoort",
-        "alta": "2026-11-12",
-        "temporada": 2026
-      },
-      {
-        "file": "alonso-bahrain",
-        "alta": "2026-11-12",
-        "temporada": 2026
-      },
-      {
-        "file": "alonso-china-q",
-        "alta": "2026-11-12",
-        "temporada": 2026
-      },
-      {
-        "file": "amr26-china",
-        "alta": "2026-11-12",
-        "temporada": 2026
-      },
-      {
-        "file": "stroll-austria-1",
-        "alta": "2026-11-12",
-        "temporada": 2026
-      },
-      {
-        "file": "alonso-austria-2",
-        "alta": "2026-11-12",
-        "temporada": 2026
-      },
-      {
-        "file": "alonso-austria-1",
-        "alta": "2026-11-12",
-        "temporada": 2026
-      },
-      {
-        "file": "amr26",
-        "alta": "2026-11-05",
-        "temporada": 2026
-      },
-      {
-        "file": "alonso-japon",
-        "alta": "2026-03-29",
         "temporada": 2026
       }
     ],
@@ -91,11 +36,6 @@
         "temporada": 2026
       },
       {
-        "file": "fia-f1-austria-2026-nr-14-alonso-4",
-        "alta": "2026-11-13",
-        "temporada": 2026
-      },
-      {
         "file": "fia-f1-austria-2026-nr-14-alonso-2",
         "alta": "2026-11-13",
         "temporada": 2026
@@ -123,51 +63,6 @@
       {
         "file": "amr26-zandvoort",
         "alta": "2026-11-12",
-        "temporada": 2026
-      },
-      {
-        "file": "alonso-bahrain",
-        "alta": "2026-11-12",
-        "temporada": 2026
-      },
-      {
-        "file": "alonso-china-q",
-        "alta": "2026-11-12",
-        "temporada": 2026
-      },
-      {
-        "file": "amr26-china",
-        "alta": "2026-11-12",
-        "temporada": 2026
-      },
-      {
-        "file": "stroll-austria-1",
-        "alta": "2026-11-12",
-        "temporada": 2026
-      },
-      {
-        "file": "alonso-austria-2",
-        "alta": "2026-11-12",
-        "temporada": 2026
-      },
-      {
-        "file": "alonso-austria-1",
-        "alta": "2026-11-12",
-        "temporada": 2026
-      },
-      {
-        "file": "amr26",
-        "alta": "2026-11-05",
-        "temporada": 2026
-      },
-      {
-        "file": "alonso-japon",
-        "alta": "2026-03-29",
-        "temporada": 2026
-      },
-      {
-        "file": "alonso-japon-2",
-        "alta": "2026-03-29",
         "temporada": 2026
       }
     ],
