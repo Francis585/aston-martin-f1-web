@@ -1850,6 +1850,10 @@
           '<p class="moment-text">' +
           c.text +
           "</p>" +
+          '<a class="moment-search" href="https://www.youtube.com/results?search_query=' +
+          encodeURIComponent("Aston Martin F1 " + c.year + " " + short + " adelantamiento") +
+          '" target="_blank" rel="noopener">' +
+          '<span class="play"></span> Buscar vídeo</a>' +
           "</article>"
         );
       })
