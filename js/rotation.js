@@ -414,6 +414,7 @@
      ficha del coche las fotos que superan `vigente_dias`. La galería
      conserva el histórico: nada se borra, solo deja de promocionarse. */
   var VIDA_POR_DEFECTO = 240;
+  var VETADAS = []; /* fotos excluidas a mano: rivales, encuadres malos… */
 
   function antiguedad(alta) {
     return (Date.now() - Date.parse(alta + "T12:00:00")) / 86400000;
@@ -439,6 +440,9 @@
 
   function vigentes(lista, maxDias) {
     if (!lista || !lista.length) return [];
+    lista = lista.filter(function (f) {
+      return VETADAS.indexOf(f.file) === -1;
+    });
     var orden = lista.slice().sort(function (a, b) {
       return Date.parse(b.alta) - Date.parse(a.alta);
     });
@@ -452,6 +456,7 @@
   function aplicarManifiesto(m) {
     if (!m || !m.grupos) return;
     var maxDias = (m.vida && m.vida.vigente_dias) || VIDA_POR_DEFECTO;
+    VETADAS = Array.isArray(m.vetadas) ? m.vetadas : [];
 
     /* solo las 6 más recientes: cuando llega material nuevo, las viejas
        salen del pool y no vuelven a aparecer */

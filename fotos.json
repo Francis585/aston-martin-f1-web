@@ -59,11 +59,6 @@
         "file": "alonso-spa",
         "alta": "2026-11-12",
         "temporada": 2026
-      },
-      {
-        "file": "amr26-zandvoort",
-        "alta": "2026-11-12",
-        "temporada": 2026
       }
     ],
     "panoramica": [
@@ -309,5 +304,8 @@
       "lic": "CC BY-SA 4.0",
       "fuente": "https://commons.wikimedia.org/wiki/File:FIA_F1_Austria_2026_Nr._18_Stroll_(4).jpg"
     }
-  }
+  },
+  "vetadas": [
+    "amr26-zandvoort"
+  ]
 }

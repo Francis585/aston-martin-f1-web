@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://astonmartin-f1-team.vercel.app/sitemap.xml
