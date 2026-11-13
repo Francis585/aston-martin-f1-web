@@ -42,7 +42,7 @@
     if (fotos.length < 2) return;
     img.style.opacity = "0";
     setTimeout(function () {
-      img.src = "../imgs/2026/" + fotos[idx] + ".webp";
+      img.src = "../imgs/" + fotos[idx].año + "/" + fotos[idx].file + ".webp";
       img.onload = function () { img.style.opacity = "1"; };
       img.onerror = function () { img.style.opacity = "1"; };
     }, 420);
@@ -53,7 +53,9 @@
     .then(function (m) {
       if (!m || !m.grupos) return;
       var lista = (m.grupos.ficha && m.grupos.ficha.length ? m.grupos.ficha : m.grupos.panoramica || m.grupos.coche) || [];
-      fotos = lista.map(function (f) { return f.file; }).filter(Boolean);
+      fotos = lista
+        .filter(function (f) { return f && f.file; })
+        .map(function (f) { return { file: f.file, año: f.temporada || new Date().getFullYear() }; });
       window.__tec = fotos; /* visible para comprobar que carga */
       if (fotos.length < 2) return;
       idx = 0;

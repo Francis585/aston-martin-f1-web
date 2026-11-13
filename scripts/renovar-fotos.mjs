@@ -14,7 +14,8 @@ import { fileURLToPath } from "node:url";
 
 const raiz = join(dirname(fileURLToPath(import.meta.url)), "..");
 const rutaManifiesto = join(raiz, "fotos.json");
-const carpeta = join(raiz, "imgs", "2026");
+const TEMPORADA = new Date().getFullYear();
+const carpeta = join(raiz, "imgs", String(TEMPORADA));
 /* ruta del ffmpeg: admite rutas de Windows y del shell de git-bash (/c/...) */
 function aRutaNativa(p) {
   if (!p) return p;
@@ -175,7 +176,7 @@ for (const c of candidatas.slice(0, MAX)) {
       continue;
     }
 
-    const entrada = { file: nombre, alta: HOY, temporada: 2026 };
+    const entrada = { file: nombre, alta: HOY, temporada: TEMPORADA };
     for (const grupo of ["galeria", "coche", "portada"]) {
       if (!manifiesto.grupos[grupo].some((f) => f.file === nombre)) {
         manifiesto.grupos[grupo].unshift(entrada);

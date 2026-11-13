@@ -969,7 +969,7 @@
           return (
             '<a class="news-card" href="' + escapeHtml(n.link) + '" target="_blank" rel="noopener">' +
               '<div class="news-media">' +
-                '<img src="../imgs/2026/' + foto + '.webp" alt="" loading="lazy" />' +
+                '<img src="../imgs/' + foto.año + "/" + foto.file + '.webp" alt="" loading="lazy" />' +
               "</div>" +
               '<div class="news-body">' +
                 '<span class="news-tag">' + escapeHtml(n.source) + "</span>" +

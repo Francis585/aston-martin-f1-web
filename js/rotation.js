@@ -11,7 +11,15 @@
 
   var root = document.documentElement;
   var reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-  var IMG = "../imgs/2026/";
+  var TEMPORADA_FOTOS = new Date().getFullYear();
+  var IMG = "../imgs/" + TEMPORADA_FOTOS + "/";
+  /* cada foto sabe en qué carpeta vive: así el cambio de temporada es solo
+     tener las imágenes nuevas en imgs/<año>/ */
+  var CARPETAS = {};
+  function rutaFoto(fichero) {
+    var año = CARPETAS[fichero] || TEMPORADA_FOTOS;
+    return "../imgs/" + año + "/" + fichero + ".webp";
+  }
 
   /* ---------- 1. Calendario 2026 ----------
      r      = ronda
@@ -107,6 +115,33 @@
     yas_marina: { tema: "noche", edicion: "Edición nocturna" },
   };
 
+  /* Si aparece un circuito nuevo, la paleta se decide por país. */
+  var PAISES = {
+    Australia: { tema: "oceania", edicion: "Edición del Pacífico" },
+    China: { tema: "asia", edicion: "Edición de Asia" },
+    Japan: { tema: "asia", edicion: "Edición de Asia" },
+    Singapore: { tema: "noche", edicion: "Edición nocturna" },
+    Bahrain: { tema: "oriente", edicion: "Edición del desierto" },
+    "Saudi Arabia": { tema: "oriente", edicion: "Edición del desierto" },
+    Azerbaijan: { tema: "oriente", edicion: "Edición del desierto" },
+    Qatar: { tema: "noche", edicion: "Edición nocturna" },
+    "United Arab Emirates": { tema: "noche", edicion: "Edición nocturna" },
+    "United States": { tema: "america", edicion: "Edición americana" },
+    Canada: { tema: "america", edicion: "Edición americana" },
+    Mexico: { tema: "america", edicion: "Edición americana" },
+    Brazil: { tema: "america", edicion: "Edición americana" },
+    Spain: { tema: "mediterraneo", edicion: "Edición mediterránea" },
+    Monaco: { tema: "mediterraneo", edicion: "Edición mediterránea" },
+    Italy: { tema: "mediterraneo", edicion: "Edición mediterránea" },
+    Hungary: { tema: "mediterraneo", edicion: "Edición mediterránea" },
+    France: { tema: "europa", edicion: "Edición de Europa" },
+    Germany: { tema: "europa", edicion: "Edición de Europa" },
+    Austria: { tema: "europa", edicion: "Edición de Europa" },
+    Belgium: { tema: "europa", edicion: "Edición de Europa" },
+    Netherlands: { tema: "europa", edicion: "Edición de Europa" },
+    "United Kingdom": { tema: "europa", edicion: "Edición de Europa" },
+  };
+
   /* ---------- 2. GP activo y siguiente ---------- */
   function hoy() {
     var d = new Date();
@@ -193,7 +228,10 @@
 
         var nuevo = carreras.map(function (r) {
           var cid = r.Circuit.circuitId;
-          var mapa = CIRCUITOS[cid] || { tema: "europa", edicion: "Edición de Europa" };
+          var mapa =
+            CIRCUITOS[cid] ||
+            PAISES[r.Circuit.Location.country] ||
+            { tema: "europa", edicion: "Edición de Europa" };
           var nombre = r.raceName.replace(/ Grand Prix$/, "");
           var fotosGp = [];
           for (var i = 0; i < CAL.length; i++) {
@@ -242,7 +280,7 @@
     if (document.body.classList.contains("con-video")) return;
     if (!heroImg || pool.length < 2) return;
     poolIdx = (poolIdx + 1) % pool.length;
-    var nueva = IMG + pool[poolIdx] + ".webp";
+    var nueva = rutaFoto(pool[poolIdx]);
     var pre = new Image();
 
     pre.onload = function () {
@@ -325,7 +363,7 @@
   function pintarBand() {
     if (!band || PANORAMICA.length < 2) return;
     panIdx = (panIdx + 1) % PANORAMICA.length;
-    var ruta = IMG + PANORAMICA[panIdx] + ".webp";
+    var ruta = rutaFoto(PANORAMICA[panIdx]);
     var pre = new Image();
     pre.onload = function () {
       band.style.transition = "opacity 0.6s ease";
@@ -355,7 +393,7 @@
   function pintarCoche() {
     carImgs.forEach(function (img, n) {
       var idx = (carIdx + n * 3) % ACCION.length;
-      var ruta = IMG + ACCION[idx] + ".webp";
+      var ruta = rutaFoto(ACCION[idx]);
       var pre = new Image();
       pre.onload = function () {
         img.style.transition = "opacity 0.6s ease";
@@ -457,6 +495,11 @@
     if (!m || !m.grupos) return;
     var maxDias = (m.vida && m.vida.vigente_dias) || VIDA_POR_DEFECTO;
     VETADAS = Array.isArray(m.vetadas) ? m.vetadas : [];
+    Object.keys(m.grupos).forEach(function (g) {
+      (m.grupos[g] || []).forEach(function (f) {
+        if (f && f.file) CARPETAS[f.file] = f.temporada || TEMPORADA_FOTOS;
+      });
+    });
 
     /* solo las 6 más recientes: cuando llega material nuevo, las viejas
        salen del pool y no vuelven a aparecer */
@@ -492,7 +535,7 @@
       PANORAMICA.length = 0;
       Array.prototype.push.apply(PANORAMICA, pan);
       if (band) {
-        band.src = IMG + PANORAMICA[0] + ".webp";
+        band.src = rutaFoto(PANORAMICA[0]);
         band.alt = altDe(PANORAMICA[0], band.alt);
         panIdx = 0;
       }

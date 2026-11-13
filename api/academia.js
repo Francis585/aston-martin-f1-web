@@ -6,7 +6,11 @@
    cliente mantiene entonces los valores que tenga guardados.
    ========================================================= */
 
-const PAGINA = "2026_Formula_2_Championship";
+/* la temporada sale del año en curso; si esa página no existe, se prueba la anterior */
+function paginas() {
+  const año = new Date().getFullYear();
+  return [año + "_Formula_2_Championship", año - 1 + "_Formula_2_Championship"];
+}
 const API = "https://en.wikipedia.org/w/api.php";
 
 function sinEtiquetas(html) {
@@ -19,6 +23,8 @@ function sinEtiquetas(html) {
 }
 
 /* de una fila de la tabla saca posición, resultados por ronda y puntos */
+let paginaActual = "";
+
 function analizarFila(fila) {
   const celdas = [...fila.matchAll(/<t[dh][^>]*>([\s\S]*?)<\/t[dh]>/g)].map((m) => sinEtiquetas(m[1]));
   const plano = celdas.join(" ");
@@ -47,7 +53,7 @@ function analizarFila(fila) {
     mejor,
     carreras,
     serie: "Fórmula 2",
-    fuente: "https://en.wikipedia.org/wiki/" + PAGINA,
+    fuente: "https://en.wikipedia.org/wiki/" + paginaActual,
   };
 }
 
@@ -56,8 +62,9 @@ module.exports = async function handler(req, res) {
   res.setHeader("Cache-Control", "public, s-maxage=3600, stale-while-revalidate=7200");
 
   try {
+    const pagina = paginas()[0];
     const url =
-      API + "?action=parse&format=json&formatversion=2&prop=text&page=" + encodeURIComponent(PAGINA);
+      API + "?action=parse&format=json&formatversion=2&prop=text&page=" + encodeURIComponent(pagina);
     const controller = new AbortController();
     const timer = setTimeout(() => controller.abort(), 9000);
 
@@ -71,6 +78,7 @@ module.exports = async function handler(req, res) {
     clearTimeout(timer);
     if (!r.ok) throw new Error("Wikipedia HTTP " + r.status);
 
+    paginaActual = pagina;
     const json = await r.json();
     const html = json && json.parse && json.parse.text;
     if (!html) throw new Error("Respuesta inesperada de Wikipedia");
