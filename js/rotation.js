@@ -441,6 +441,11 @@
       if (portadaALaVista()) cambiarPortada();
     }, 10000);
   }
+  if (band && PANORAMICA.length > 1) {
+    setInterval(function () {
+      if (portadaALaVista()) pintarBand();
+    }, 15000);
+  }
   if (carImgs.length) {
     setInterval(function () {
       if (visible) pintarCoche();
