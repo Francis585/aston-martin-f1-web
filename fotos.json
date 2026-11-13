@@ -4,13 +4,8 @@
   "grupos": {
     "portada": [
       {
-        "file": "fia-f1-austria-2026-nr-18-stroll-4",
-        "alta": "2026-11-13",
-        "temporada": 2026
-      },
-      {
-        "file": "fia-f1-austria-2026-nr-14-alonso-2",
-        "alta": "2026-11-13",
+        "file": "2026-chinese-gp-aston-martin-lance-stroll-fp1",
+        "alta": "2026-11-12",
         "temporada": 2026
       },
       {
@@ -19,13 +14,18 @@
         "temporada": 2026
       },
       {
-        "file": "2026-chinese-gp-aston-martin-lance-stroll-fp1",
+        "file": "2026-chinese-gp-aston-martin-fernando-alonso-fp1",
         "alta": "2026-11-12",
         "temporada": 2026
       },
       {
-        "file": "2026-chinese-gp-aston-martin-fernando-alonso-fp1",
-        "alta": "2026-11-12",
+        "file": "fia-f1-austria-2026-nr-14-alonso-2",
+        "alta": "2026-11-13",
+        "temporada": 2026
+      },
+      {
+        "file": "fia-f1-austria-2026-nr-18-stroll-4",
+        "alta": "2026-11-13",
         "temporada": 2026
       }
     ],
