@@ -38,14 +38,18 @@
   var fotos = [];
   var idx = 0;
 
-  function pintar() {
-    if (fotos.length < 2) return;
-    img.style.opacity = "0";
-    setTimeout(function () {
-      img.src = "../imgs/" + fotos[idx].año + "/" + fotos[idx].file + ".webp";
+  function pintar(fundido) {
+    if (!fotos.length) return;
+    var f = fotos[idx];
+    var poner = function () {
+      img.style.objectPosition = f.encuadre || "50% 60%";
+      img.src = "../imgs/" + f.año + "/" + f.file + ".webp";
       img.onload = function () { img.style.opacity = "1"; };
       img.onerror = function () { img.style.opacity = "1"; };
-    }, 420);
+    };
+    if (!fundido) { poner(); return; }
+    img.style.opacity = "0";
+    setTimeout(poner, 420);
   }
 
   fetch("../fotos.json", { headers: { Accept: "application/json" } })
@@ -55,15 +59,29 @@
       var lista = (m.grupos.ficha && m.grupos.ficha.length ? m.grupos.ficha : m.grupos.panoramica || m.grupos.coche) || [];
       fotos = lista
         .filter(function (f) { return f && f.file; })
-        .map(function (f) { return { file: f.file, año: f.temporada || new Date().getFullYear() }; });
+        .map(function (f) {
+          return { file: f.file, año: f.temporada || new Date().getFullYear(), encuadre: f.encuadre };
+        });
       window.__tec = fotos; /* visible para comprobar que carga */
-      if (fotos.length < 2) return;
       idx = 0;
+      pintar(false); /* la más reciente entra ya, sin esperar al primer ciclo */
+      if (fotos.length < 2) return;
+      /* solo rota cuando la tarjeta está en pantalla */
+      var visible = false;
+      var stage = img.parentElement;
+      if ("IntersectionObserver" in window && stage) {
+        new IntersectionObserver(function (entradas) {
+          visible = entradas[0].isIntersecting;
+        }, { threshold: 0.25 }).observe(stage);
+      } else {
+        visible = true;
+      }
+
       setInterval(function () {
-        if (document.hidden) return;
+        if (!visible) return;
         idx = (idx + 1) % fotos.length;
-        pintar();
-      }, 8000);
+        pintar(true);
+      }, 12000);
     })
     .catch(function () {});
 })();
