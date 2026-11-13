@@ -22,6 +22,35 @@ window.F1_DATA = {
      Las cifras de temporada se actualizan tras cada cita de su serie; si aún
      no hay dato se muestran como «—» en lugar de inventarlo. */
 
+
+  /* Momentos que no salen de los resultados (peleas, adelantamientos) y que
+     se añaden a mano. `video` es un enlace directo; si falta, la tarjeta
+     ofrece una búsqueda. */
+  momentosExtra: [
+    {
+      tipo: "Adelantamiento",
+      año: 2026,
+      gp: "Brasil",
+      fecha: "2026-11-08",
+      stat: "P13",
+      titulo: "Alonso pasa a Hamilton por fuera",
+      texto:
+        "Vuelta 10 en Interlagos, con la pista húmeda: Alonso se empareja con el Ferrari de Hamilton y le gana la posición por el exterior de Ferradura. Una de las maniobras del año.",
+      video: "https://www.youtube.com/watch?v=AdW2Rj7TS9w",
+    },
+    {
+      tipo: "Adelantamiento",
+      año: 2026,
+      gp: "Brasil",
+      fecha: "2026-11-08",
+      stat: "P12",
+      titulo: "Duelo con Albon en el mismo punto",
+      texto:
+        "Un par de curvas después, el Williams de Albon se lanzó al interior en el mismo sitio. Alonso aguantó y cerró la carrera con otro adelantamiento para el recuerdo.",
+      video: "https://www.youtube.com/watch?v=1twpU3JggMA",
+    },
+  ],
+
   academy: [
     {
       nombre: "Mari Boya",
