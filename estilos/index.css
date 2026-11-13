@@ -897,10 +897,11 @@ p {
 .panel-grid {
   display: grid;
   grid-template-columns: 1.6fr 1fr;
-  gap: clamp(32px, 5vw, 72px);
-  padding: clamp(28px, 4vw, 48px);
-  background: var(--white);
-  border: 1px solid var(--line-dark);
+  gap: clamp(24px, 3vw, 48px);
+  padding: 0 0 0 clamp(18px, 2vw, 26px);
+  background: transparent;
+  border: 0;
+  border-left: 3px solid var(--brand-lime);
 }
 
 .panel-grid h3 {
@@ -954,7 +955,7 @@ p {
 }
 
 .table-wrap {
-  margin-top: clamp(40px, 6vw, 64px);
+  margin-top: clamp(26px, 3.5vw, 44px);
   overflow-x: auto;
   border: 1px solid var(--line-dark);
 }
@@ -3660,8 +3661,8 @@ p {
 .tec-stage img {
   width: 100%;
   height: 100%;
-  object-fit: contain;
-  padding: 10px 16px;
+  object-fit: cover;
+  object-position: 50% 60%;
   transform-origin: 50% 55%;
   animation: tec-turn 24s ease-in-out infinite;
   transition: opacity 0.7s var(--ease);
@@ -3670,10 +3671,10 @@ p {
 @keyframes tec-turn {
   0%,
   100% {
-    transform: rotateY(-8deg) scale(1.06);
+    transform: rotateY(-8deg) scale(1.28);
   }
   50% {
-    transform: rotateY(8deg) scale(1.11);
+    transform: rotateY(8deg) scale(1.34);
   }
 }
 
