@@ -441,9 +441,11 @@
       if (portadaALaVista()) cambiarPortada();
     }, 10000);
   }
-  if (band && PANORAMICA.length > 1) {
+  if (band) {
+    /* la lista de panorámicas llega con el manifiesto, así que se comprueba
+       dentro del intervalo y no al arrancar */
     setInterval(function () {
-      if (portadaALaVista()) pintarBand();
+      if (PANORAMICA.length > 1 && portadaALaVista()) pintarBand();
     }, 15000);
   }
   if (carImgs.length) {
