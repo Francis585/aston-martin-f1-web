@@ -1,0 +1,5 @@
+node_modules/
+.vercel/
+.admin-token.txt
+*.log
+.DS_Store

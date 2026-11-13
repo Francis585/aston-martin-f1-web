@@ -1,0 +1,318 @@
+/* =========================================================
+   TEMAS DE GRAN PREMIO + ROTACIÓN DE IMÁGENES
+   Se carga después de index.css. El tema lo aplica js/rotation.js
+   poniendo data-theme en <html> según el GP activo del calendario.
+   Solo se sobreescriben tokens, así que todo el diseño (botones,
+   acentos, tablas, gráficos) cambia de color sin tocar el layout.
+   ========================================================= */
+
+/* ---------- Paletas por región / tipo de GP ---------- */
+
+/* Europa clásica (por defecto) */
+:root,
+:root[data-theme="europa"] {
+  --green: #00594f;
+  --green-2: #00786a;
+  --green-3: #00a08c;
+  --lime: #cedc00;
+  --lime-soft: #e4ef6a;
+  --ink: #04120f;
+  --ink-2: #071a16;
+  --ink-3: #0c2620;
+}
+
+/* Carreras nocturnas: Singapur, Las Vegas, Qatar, Abu Dhabi */
+:root[data-theme="noche"] {
+  --green: #0d3a4a;
+  --green-2: #12566b;
+  --green-3: #1f8fa8;
+  --lime: #7ff0d4;
+  --lime-soft: #b8f7e6;
+  --ink: #030b12;
+  --ink-2: #061520;
+  --ink-3: #0a2131;
+}
+
+/* América: Miami, Canadá, Austin, México, Brasil */
+:root[data-theme="america"] {
+  --green: #16503a;
+  --green-2: #1c6b4c;
+  --green-3: #2a9d6f;
+  --lime: #f0a63c;
+  --lime-soft: #f7c978;
+  --ink: #080f0a;
+  --ink-2: #0d1710;
+  --ink-3: #132219;
+}
+
+/* Asia: China, Japón */
+:root[data-theme="asia"] {
+  --green: #173f4f;
+  --green-2: #1c5568;
+  --green-3: #2f8496;
+  --lime: #b9a7ff;
+  --lime-soft: #d5caff;
+  --ink: #060b12;
+  --ink-2: #0a121c;
+  --ink-3: #0f1a27;
+}
+
+/* Oriente Medio: Bahréin, Arabia, Azerbaiyán */
+:root[data-theme="oriente"] {
+  --green: #4a3f14;
+  --green-2: #6b5a1c;
+  --green-3: #9c8526;
+  --lime: #e8c25a;
+  --lime-soft: #f2dda0;
+  --ink: #0e0b04;
+  --ink-2: #16110a;
+  --ink-3: #201910;
+}
+
+/* Mediterráneo: Mónaco, Barcelona, Hungría, Monza, Madrid */
+:root[data-theme="mediterraneo"] {
+  --green: #004f45;
+  --green-2: #007267;
+  --green-3: #00b39a;
+  --lime: #e8f24a;
+  --lime-soft: #f3f9a0;
+  --ink: #04120e;
+  --ink-2: #071a15;
+  --ink-3: #0c2620;
+}
+
+/* Oceanía: Australia */
+:root[data-theme="oceania"] {
+  --green: #0a4a53;
+  --green-2: #0d6673;
+  --green-3: #17a0b0;
+  --lime: #9ef0a8;
+  --lime-soft: #c9f7cf;
+  --ink: #041214;
+  --ink-2: #071a1d;
+  --ink-3: #0c262b;
+}
+
+/* ---------- Superficies de marca (no rotan) ----------
+   El acento regional se queda en detalles: puntos, enlaces, subrayados,
+   hovers y títulos. Las superficies grandes (banda del marquee, botones,
+   cifras, filas activas, barras del gráfico) vuelven siempre al lima y
+   al verde de Aston Martin, para que la marca nunca se disfrace. */
+
+:root {
+  --brand-lime: #cedc00;
+  --brand-lime-soft: #e4ef6a;
+}
+
+.marquee,
+.btn-primary,
+.nav-links .nav-cta,
+.hero-stats dd,
+.row-live,
+.split-tag,
+.academy-tag,
+.car-band-tag,
+.g-round,
+.cal-badge,
+.live-dot,
+.to-top,
+.skip-link,
+.scroll-hint span,
+.timeline li::before,
+.tl-year,
+.live-stat strong,
+.table-more:hover,
+.cal-btn:hover,
+.lb-close:hover {
+  background-color: var(--brand-lime);
+}
+
+.btn-primary,
+.nav-links .nav-cta,
+.split-tag,
+.academy-tag,
+.car-band-tag,
+.g-round,
+.cal-badge,
+.to-top,
+.skip-link,
+.table-more:hover,
+.cal-btn:hover,
+.lb-close:hover {
+  color: var(--ink);
+}
+
+.btn-primary:hover,
+.nav-links .nav-cta:hover {
+  background-color: var(--brand-lime-soft);
+}
+
+.hero-stats dd,
+.tl-year,
+.live-stat strong {
+  background-color: transparent;
+  color: var(--brand-lime);
+}
+
+.split-tag,
+.academy-tag,
+.car-band-tag,
+.g-round,
+.cal-badge {
+  background-color: var(--brand-lime);
+}
+
+.hero-title .outline {
+  -webkit-text-stroke-color: var(--brand-lime);
+  color: transparent;
+}
+
+.chart-bar {
+  background: linear-gradient(180deg, var(--brand-lime), var(--green-2));
+}
+
+.chart-col.is-live .chart-bar {
+  background: linear-gradient(180deg, var(--brand-lime), var(--brand-lime));
+}
+
+.chart-val {
+  color: var(--brand-lime);
+}
+
+::selection {
+  background: var(--brand-lime);
+  color: var(--ink);
+}
+
+.scroll-progress {
+  background: linear-gradient(90deg, var(--green-3), var(--brand-lime));
+}
+
+/* Transición suave de tokens al cambiar de GP */
+body {
+  transition:
+    background-color 0.7s var(--ease),
+    color 0.7s var(--ease);
+}
+
+/* ---------- Fundido de la foto de portada ---------- */
+
+.hero-media img {
+  transition: opacity 0.85s var(--ease);
+}
+
+.hero-media img.is-swapping {
+  opacity: 0;
+}
+
+/* ---------- Encaje del hero en pantallas bajas ----------
+   A 1080p ya entra con el tamaño base; en portátiles de 720-900 px de
+   alto se comprime para que la tabla de cifras no quede cortada. */
+@media (max-height: 900px) {
+  .hero {
+    padding-top: calc(var(--header-h) + 12px);
+  }
+  .hero-title {
+    font-size: clamp(2.8rem, min(9.5vw, 11.2vh), 8rem);
+  }
+  .hero-sub {
+    margin-top: 16px;
+    font-size: 1rem;
+  }
+  .hero-actions {
+    margin-top: 18px;
+  }
+  .hero-stats {
+    margin-top: 20px;
+  }
+  .gp-chip {
+    margin: 12px 0 8px;
+    padding: 7px 14px;
+    font-size: 10px;
+  }
+}
+
+@media (max-height: 740px) {
+  .hero-title {
+    font-size: clamp(2.4rem, min(8.5vw, 9.6vh), 6rem);
+  }
+  .hero-sub {
+    margin-top: 12px;
+  }
+  .hero-actions {
+    margin-top: 14px;
+  }
+  .hero-stats {
+    margin-top: 16px;
+  }
+}
+
+/* ---------- Chip de GP activo en la portada ---------- */
+
+.gp-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin: 16px 0 12px;
+  padding: 9px 16px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: rgba(0, 0, 0, 0.35);
+  backdrop-filter: blur(8px);
+  font-size: 11px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  font-weight: 600;
+  color: var(--paper);
+  font-family: var(--font-body);
+}
+
+.gp-chip .gp-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--lime);
+  box-shadow: 0 0 0 3px color-mix(in srgb, var(--lime) 25%, transparent);
+  flex: 0 0 auto;
+}
+
+.gp-chip.is-between .gp-dot {
+  background: var(--muted-2);
+  box-shadow: none;
+}
+
+.gp-chip.is-between .gp-name {
+  color: var(--paper);
+}
+
+.gp-chip .gp-name {
+  color: var(--lime);
+}
+
+.gp-chip .gp-sep {
+  opacity: 0.4;
+}
+
+.gp-chip .gp-edition {
+  color: var(--muted);
+  letter-spacing: 0.14em;
+}
+
+.gp-chip .gp-count {
+  padding-left: 10px;
+  border-left: 1px solid var(--line);
+  color: var(--muted);
+  font-variant-numeric: tabular-nums;
+}
+
+@media (max-width: 560px) {
+  .gp-chip {
+    font-size: 10px;
+    gap: 7px;
+    padding: 8px 12px;
+  }
+  .gp-chip .gp-edition {
+    display: none;
+  }
+}

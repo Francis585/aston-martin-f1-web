@@ -1,0 +1,418 @@
+{
+  "version": 1,
+  "nota": "Registro de fotos y su fecha de alta. Lo usa js/rotation.js para rotar solo con material reciente y para retirar poco a poco las fotos viejas de portada y ficha del coche. Las fotos caducadas siguen disponibles en la galería. Para dar de alta una foto nueva: node scripts/nueva-foto.mjs",
+  "grupos": {
+    "portada": [
+      {
+        "file": "fia-f1-austria-2026-nr-18-stroll-4",
+        "alta": "2026-11-13",
+        "temporada": 2026
+      },
+      {
+        "file": "fia-f1-austria-2026-nr-14-alonso-4",
+        "alta": "2026-11-13",
+        "temporada": 2026
+      },
+      {
+        "file": "fia-f1-austria-2026-nr-14-alonso-2",
+        "alta": "2026-11-13",
+        "temporada": 2026
+      },
+      {
+        "file": "amr-26-montmelo-2026",
+        "alta": "2026-11-12",
+        "temporada": 2026
+      },
+      {
+        "file": "2026-chinese-gp-aston-martin-lance-stroll-fp1",
+        "alta": "2026-11-12",
+        "temporada": 2026
+      },
+      {
+        "file": "2026-chinese-gp-aston-martin-fernando-alonso-fp1",
+        "alta": "2026-11-12",
+        "temporada": 2026
+      },
+      {
+        "file": "alonso-spa",
+        "alta": "2026-11-12",
+        "temporada": 2026
+      },
+      {
+        "file": "amr26-zandvoort",
+        "alta": "2026-11-12",
+        "temporada": 2026
+      },
+      {
+        "file": "alonso-bahrain",
+        "alta": "2026-11-12",
+        "temporada": 2026
+      },
+      {
+        "file": "alonso-china-q",
+        "alta": "2026-11-12",
+        "temporada": 2026
+      },
+      {
+        "file": "amr26-china",
+        "alta": "2026-11-12",
+        "temporada": 2026
+      },
+      {
+        "file": "stroll-austria-1",
+        "alta": "2026-11-12",
+        "temporada": 2026
+      },
+      {
+        "file": "alonso-austria-2",
+        "alta": "2026-11-12",
+        "temporada": 2026
+      },
+      {
+        "file": "alonso-austria-1",
+        "alta": "2026-11-12",
+        "temporada": 2026
+      },
+      {
+        "file": "amr26",
+        "alta": "2026-11-05",
+        "temporada": 2026
+      },
+      {
+        "file": "alonso-japon",
+        "alta": "2026-03-29",
+        "temporada": 2026
+      }
+    ],
+    "coche": [
+      {
+        "file": "fia-f1-austria-2026-nr-18-stroll-4",
+        "alta": "2026-11-13",
+        "temporada": 2026
+      },
+      {
+        "file": "fia-f1-austria-2026-nr-14-alonso-4",
+        "alta": "2026-11-13",
+        "temporada": 2026
+      },
+      {
+        "file": "fia-f1-austria-2026-nr-14-alonso-2",
+        "alta": "2026-11-13",
+        "temporada": 2026
+      },
+      {
+        "file": "amr-26-montmelo-2026",
+        "alta": "2026-11-12",
+        "temporada": 2026
+      },
+      {
+        "file": "2026-chinese-gp-aston-martin-lance-stroll-fp1",
+        "alta": "2026-11-12",
+        "temporada": 2026
+      },
+      {
+        "file": "2026-chinese-gp-aston-martin-fernando-alonso-fp1",
+        "alta": "2026-11-12",
+        "temporada": 2026
+      },
+      {
+        "file": "alonso-spa",
+        "alta": "2026-11-12",
+        "temporada": 2026
+      },
+      {
+        "file": "amr26-zandvoort",
+        "alta": "2026-11-12",
+        "temporada": 2026
+      },
+      {
+        "file": "alonso-bahrain",
+        "alta": "2026-11-12",
+        "temporada": 2026
+      },
+      {
+        "file": "alonso-china-q",
+        "alta": "2026-11-12",
+        "temporada": 2026
+      },
+      {
+        "file": "amr26-china",
+        "alta": "2026-11-12",
+        "temporada": 2026
+      },
+      {
+        "file": "stroll-austria-1",
+        "alta": "2026-11-12",
+        "temporada": 2026
+      },
+      {
+        "file": "alonso-austria-2",
+        "alta": "2026-11-12",
+        "temporada": 2026
+      },
+      {
+        "file": "alonso-austria-1",
+        "alta": "2026-11-12",
+        "temporada": 2026
+      },
+      {
+        "file": "amr26",
+        "alta": "2026-11-05",
+        "temporada": 2026
+      },
+      {
+        "file": "alonso-japon",
+        "alta": "2026-03-29",
+        "temporada": 2026
+      },
+      {
+        "file": "alonso-japon-2",
+        "alta": "2026-03-29",
+        "temporada": 2026
+      }
+    ],
+    "panoramica": [
+      {
+        "file": "amr26",
+        "alta": "2026-11-12",
+        "temporada": 2026
+      },
+      {
+        "file": "amr-26-montmelo-2026",
+        "alta": "2026-11-12",
+        "temporada": 2026
+      },
+      {
+        "file": "amr26-china",
+        "alta": "2026-11-12",
+        "temporada": 2026
+      }
+    ],
+    "galeria": [
+      {
+        "file": "fia-f1-austria-2026-nr-18-stroll-4",
+        "alta": "2026-11-13",
+        "temporada": 2026
+      },
+      {
+        "file": "fia-f1-austria-2026-nr-14-alonso-4",
+        "alta": "2026-11-13",
+        "temporada": 2026
+      },
+      {
+        "file": "fia-f1-austria-2026-nr-14-alonso-2",
+        "alta": "2026-11-13",
+        "temporada": 2026
+      },
+      {
+        "file": "amr-26-montmelo-2026",
+        "alta": "2026-11-12",
+        "temporada": 2026
+      },
+      {
+        "file": "2026-chinese-gp-aston-martin-lance-stroll-fp1",
+        "alta": "2026-11-12",
+        "temporada": 2026
+      },
+      {
+        "file": "2026-chinese-gp-aston-martin-fernando-alonso-fp1",
+        "alta": "2026-11-12",
+        "temporada": 2026
+      },
+      {
+        "file": "alonso-spa",
+        "alta": "2026-11-12",
+        "temporada": 2026
+      },
+      {
+        "file": "amr26-zandvoort",
+        "alta": "2026-11-12",
+        "temporada": 2026
+      },
+      {
+        "file": "alonso-bahrain",
+        "alta": "2026-11-12",
+        "temporada": 2026
+      },
+      {
+        "file": "alonso-china-q",
+        "alta": "2026-11-12",
+        "temporada": 2026
+      },
+      {
+        "file": "amr26-china",
+        "alta": "2026-11-12",
+        "temporada": 2026
+      },
+      {
+        "file": "stroll-austria-1",
+        "alta": "2026-11-12",
+        "temporada": 2026
+      },
+      {
+        "file": "alonso-austria-2",
+        "alta": "2026-11-12",
+        "temporada": 2026
+      },
+      {
+        "file": "alonso-austria-1",
+        "alta": "2026-11-12",
+        "temporada": 2026
+      },
+      {
+        "file": "alonso",
+        "alta": "2026-11-05",
+        "temporada": 2026
+      },
+      {
+        "file": "alonso-card",
+        "alta": "2026-11-05",
+        "temporada": 2026
+      },
+      {
+        "file": "stroll",
+        "alta": "2026-11-05",
+        "temporada": 2026
+      },
+      {
+        "file": "stroll-card",
+        "alta": "2026-11-05",
+        "temporada": 2026
+      },
+      {
+        "file": "amr26",
+        "alta": "2026-11-05",
+        "temporada": 2026
+      },
+      {
+        "file": "boya",
+        "alta": "2026-11-05",
+        "temporada": 2026
+      },
+      {
+        "file": "alonso-japon",
+        "alta": "2026-03-29",
+        "temporada": 2026
+      },
+      {
+        "file": "alonso-japon-2",
+        "alta": "2026-03-29",
+        "temporada": 2026
+      },
+      {
+        "file": "stroll-china",
+        "alta": "2026-03-15",
+        "temporada": 2026
+      },
+      {
+        "file": "stroll-china-2",
+        "alta": "2026-03-15",
+        "temporada": 2026
+      },
+      {
+        "file": "alonso-australia",
+        "alta": "2026-03-08",
+        "temporada": 2026
+      },
+      {
+        "file": "stroll-australia",
+        "alta": "2026-03-08",
+        "temporada": 2026
+      }
+    ],
+    "ficha": [
+      {
+        "file": "amr26",
+        "alta": "2026-11-12",
+        "temporada": 2026
+      },
+      {
+        "file": "amr-26-montmelo-2026",
+        "alta": "2026-11-12",
+        "temporada": 2026
+      },
+      {
+        "file": "amr26-china",
+        "alta": "2026-11-12",
+        "temporada": 2026
+      }
+    ]
+  },
+  "vida": {
+    "fresca_dias": 90,
+    "vigente_dias": 150,
+    "retirar_dias": 240
+  },
+  "creditos": {
+    "alonso-austria-1": {
+      "autor": "Lukas Raich",
+      "lic": "CC BY-SA 4.0",
+      "fuente": "https://commons.wikimedia.org/wiki/File:FIA_F1_Austria_2026_Nr._14_Alonso_(1).jpg"
+    },
+    "alonso-austria-2": {
+      "autor": "Lukas Raich",
+      "lic": "CC BY-SA 4.0",
+      "fuente": "https://commons.wikimedia.org/wiki/File:FIA_F1_Austria_2026_Nr._14_Alonso_(3).jpg"
+    },
+    "stroll-austria-1": {
+      "autor": "Lukas Raich",
+      "lic": "CC BY-SA 4.0",
+      "fuente": "https://commons.wikimedia.org/wiki/File:FIA_F1_Austria_2026_Nr._18_Stroll_(3).jpg"
+    },
+    "amr26-china": {
+      "autor": "Liauzh",
+      "lic": "CC BY 4.0",
+      "fuente": "https://commons.wikimedia.org/wiki/File:2026_Chinese_GP_-_Aston_Martin_-_AMR26.jpg"
+    },
+    "alonso-china-q": {
+      "autor": "Liauzh",
+      "lic": "CC BY 4.0",
+      "fuente": "https://commons.wikimedia.org/wiki/File:2026_Chinese_GP_-_Aston_Martin_-_Fernando_Alonso_-_Qualifying.jpg"
+    },
+    "alonso-bahrain": {
+      "autor": "Liauzh",
+      "lic": "CC BY-SA 4.0",
+      "fuente": "https://commons.wikimedia.org/wiki/File:2026_Bahrain_GP_-_Aston_Martin_-_Fernando_Alonso_-_FP2.jpg"
+    },
+    "amr26-zandvoort": {
+      "autor": "Steffen Prößdorf",
+      "lic": "CC BY-SA 4.0",
+      "fuente": "https://commons.wikimedia.org/wiki/File:2026-08-23_Motorsport,_Formel_1,_Großer_Preis_der_Niederlande_2026_STP_2912.jpg"
+    },
+    "alonso-spa": {
+      "autor": "Der Alf",
+      "lic": "CC BY 4.0",
+      "fuente": "https://commons.wikimedia.org/wiki/File:F1_2026,_Aston_Martin_F1_Team,_Aston_Martin_AMR26,_Fernando_Alonso,_Spa_Francorchamps_(55425688703).jpg"
+    },
+    "2026-chinese-gp-aston-martin-fernando-alonso-fp1": {
+      "autor": "Liauzh",
+      "lic": "CC BY 4.0",
+      "fuente": "https://commons.wikimedia.org/wiki/File:2026_Chinese_GP_-_Aston_Martin_-_Fernando_Alonso_-_FP1.jpg"
+    },
+    "2026-chinese-gp-aston-martin-lance-stroll-fp1": {
+      "autor": "Liauzh",
+      "lic": "CC BY 4.0",
+      "fuente": "https://commons.wikimedia.org/wiki/File:2026_Chinese_GP_-_Aston_Martin_-_Lance_Stroll_-_FP1.jpg"
+    },
+    "amr-26-montmelo-2026": {
+      "autor": "Angelmersaenz",
+      "lic": "CC BY 4.0",
+      "fuente": "https://commons.wikimedia.org/wiki/File:AMR_26_montmelo_2026.jpg"
+    },
+    "fia-f1-austria-2026-nr-14-alonso-2": {
+      "autor": "Lukas Raich",
+      "lic": "CC BY-SA 4.0",
+      "fuente": "https://commons.wikimedia.org/wiki/File:FIA_F1_Austria_2026_Nr._14_Alonso_(2).jpg"
+    },
+    "fia-f1-austria-2026-nr-14-alonso-4": {
+      "autor": "Lukas Raich",
+      "lic": "CC BY-SA 4.0",
+      "fuente": "https://commons.wikimedia.org/wiki/File:FIA_F1_Austria_2026_Nr._14_Alonso_(4).jpg"
+    },
+    "fia-f1-austria-2026-nr-18-stroll-4": {
+      "autor": "Lukas Raich",
+      "lic": "CC BY-SA 4.0",
+      "fuente": "https://commons.wikimedia.org/wiki/File:FIA_F1_Austria_2026_Nr._18_Stroll_(4).jpg"
+    }
+  }
+}

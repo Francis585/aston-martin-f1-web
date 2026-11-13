@@ -1,0 +1,222 @@
+/* =========================================================
+   EDICIONES DE LA WEB
+   1) Una edición radical por temporada (2026, 2027, 2028…)
+   2) Cuatro fases dentro de cada temporada, para que el diseño
+      no sea idéntico de marzo a diciembre.
+   Lo aplica js/edicion.js con data-temporada y data-fase en <html>.
+   Se carga después de index.css y temas.css, así que su paleta
+   manda sobre la del GP.
+   ========================================================= */
+
+/* ---------------------------------------------------------
+   1. TEMPORADAS
+   --------------------------------------------------------- */
+
+/* ---- 2026 · «Era Honda» — la edición actual ---- */
+:root[data-temporada="2026"] {
+  --font-display: "Barlow Condensed", "Arial Narrow", Impact, sans-serif;
+  --font-body: "Inter", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --radius: 4px;
+  --brand-lime: #cedc00;
+  --brand-lime-soft: #e4ef6a;
+  --title-track: -0.01em;
+  --eyebrow-track: 0.2em;
+  --section-pad: 1;
+}
+
+/* ---- 2027 · «Aero» — tipografía abierta, curvas y verde menta ---- */
+:root[data-temporada="2027"] {
+  --font-display: "Archivo", "Inter", system-ui, sans-serif;
+  --font-body: "Inter", system-ui, sans-serif;
+  --radius: 16px;
+  --green: #0a2e2b;
+  --green-2: #10514a;
+  --green-3: #2fd3a8;
+  --lime: #46e0b0;
+  --lime-soft: #8ff0d2;
+  --brand-lime: #46e0b0;
+  --brand-lime-soft: #8ff0d2;
+  --ink: #051210;
+  --ink-2: #081a17;
+  --ink-3: #0d2823;
+  --line: rgba(255, 255, 255, 0.16);
+  --title-track: -0.03em;
+  --eyebrow-track: 0.3em;
+  --section-pad: 1.1;
+}
+
+[data-temporada="2027"] .section-title,
+[data-temporada="2027"] .hero-title,
+[data-temporada="2027"] .page-title {
+  text-transform: none;
+  font-weight: 800;
+  letter-spacing: var(--title-track);
+  line-height: 0.98;
+}
+
+[data-temporada="2027"] .hero-title .outline {
+  -webkit-text-stroke-color: var(--brand-lime);
+}
+
+[data-temporada="2027"] .btn {
+  border-radius: 999px;
+  text-transform: none;
+  letter-spacing: 0.01em;
+  font-weight: 600;
+  font-family: var(--font-body);
+}
+
+[data-temporada="2027"] .eyebrow {
+  text-transform: none;
+  letter-spacing: 0.02em;
+  font-weight: 600;
+  font-size: 13px;
+}
+
+[data-temporada="2027"] .gp-chip,
+[data-temporada="2027"] .split-tag,
+[data-temporada="2027"] .academy-tag,
+[data-temporada="2027"] .cal-badge,
+[data-temporada="2027"] .car-band-tag {
+  border-radius: 999px;
+}
+
+[data-temporada="2027"] .marquee,
+[data-temporada="2027"] .section-dark,
+[data-temporada="2027"] .live-panel {
+  border-block: 1px solid var(--line);
+}
+
+/* ---- 2028 · «Carbono» — dossier técnico, monoespaciada y aristas vivas ---- */
+:root[data-temporada="2028"] {
+  --font-display: ui-monospace, "JetBrains Mono", "Cascadia Mono", "Consolas", monospace;
+  --font-body: ui-monospace, "Cascadia Mono", "Consolas", monospace;
+  --radius: 0px;
+  --green: #1b1b1b;
+  --green-2: #2b2b2b;
+  --green-3: #7a7a74;
+  --lime: #e8e8e2;
+  --lime-soft: #ffffff;
+  --brand-lime: #d8d8d2;
+  --brand-lime-soft: #ffffff;
+  --ink: #050505;
+  --ink-2: #0b0b0b;
+  --ink-3: #151515;
+  --paper: #edede8;
+  --line: rgba(255, 255, 255, 0.18);
+  --title-track: 0.01em;
+  --eyebrow-track: 0.34em;
+  --section-pad: 0.92;
+}
+
+[data-temporada="2028"] .section-title,
+[data-temporada="2028"] .hero-title {
+  font-weight: 700;
+  letter-spacing: var(--title-track);
+  line-height: 1;
+}
+
+[data-temporada="2028"] .btn,
+[data-temporada="2028"] .split-tag,
+[data-temporada="2028"] .car-band-tag,
+[data-temporada="2028"] .cal-card,
+[data-temporada="2028"] .live-panel {
+  border-radius: 0;
+  border-width: 1px;
+}
+
+[data-temporada="2028"] .marquee {
+  border-block: 1px solid var(--line);
+}
+
+[data-temporada="2028"] .btn-primary {
+  color: #050505;
+}
+
+/* ---------------------------------------------------------
+   2. FASES DENTRO DE LA TEMPORADA
+   Cuatro tramos; cambian radio, densidad y ritmo tipográfico.
+   --------------------------------------------------------- */
+
+/* Fase 1 · ajuste fino */
+:root[data-fase="1"] {
+  --phase-radius: 3px;
+  --phase-pad: 1;
+  --phase-track: 0em;
+  --phase-hair: 1px;
+}
+
+/* Fase 2 · curvas: radios grandes y botones tipo pastilla */
+:root[data-fase="2"] {
+  --phase-radius: 14px;
+  --phase-pad: 1;
+  --phase-track: 0.01em;
+  --phase-hair: 1px;
+}
+
+:root[data-fase="2"] .btn {
+  border-radius: 999px;
+}
+
+/* Fase 3 · contraste: aristas vivas y filetes marcados */
+:root[data-fase="3"] {
+  --phase-radius: 0px;
+  --phase-pad: 1;
+  --phase-track: 0.02em;
+  --phase-hair: 2px;
+}
+
+:root[data-fase="3"] .section-head {
+  border-top: var(--phase-hair) solid var(--line);
+  padding-top: 28px;
+}
+
+/* Fase 4 · aire: más espacio y títulos más sueltos */
+:root[data-fase="4"] {
+  --phase-radius: 6px;
+  --phase-pad: 1.2;
+  --phase-track: 0.03em;
+  --phase-hair: 1px;
+}
+
+/* Aplicación de las fases */
+.section {
+  padding-block: calc(clamp(72px, 10vw, 140px) * var(--section-pad, 1) * var(--phase-pad, 1));
+}
+
+.section-title {
+  letter-spacing: calc(var(--title-track, 0em) + var(--phase-track, 0em));
+}
+
+.btn,
+.split-media img,
+.car-band {
+  border-radius: var(--phase-radius, var(--radius));
+}
+
+.split-media,
+.car-band {
+  overflow: hidden;
+}
+
+/* ---------------------------------------------------------
+   3. Sello de edición (lo crea js/edicion.js en el pie)
+   --------------------------------------------------------- */
+.edition-mark {
+  margin-top: 18px;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 10.5px;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--muted-2);
+}
+
+.edition-mark i {
+  width: 18px;
+  height: 1px;
+  background: currentColor;
+  display: block;
+  opacity: 0.6;
+}
