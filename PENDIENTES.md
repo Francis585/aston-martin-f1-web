@@ -19,13 +19,19 @@ Repo: https://github.com/Francis585/aston-martin-f1-web (privado)
 
 1. **Retratos en la portada** (pilotos + Adrian Newey): hay fotos CC en Commons.
    Añadir un grupo `retratos` y meter 1 de cada 4 slides, con `object-position` para caras.
-2. **og:image + sitemap.xml + robots.txt**: hoy el enlace no genera tarjeta al compartirlo.
-3. **Pasada de móvil** (390 px) sección por sección.
-4. **Rendimiento**: comprimir el pool de portada, `srcset`, carga diferida de la galería.
-5. **Vídeos de adelantamientos**: los momentos llevan ahora un enlace «Buscar vídeo» a YouTube.
+2. **Vídeos de adelantamientos**: los momentos llevan ahora un enlace «Buscar vídeo» a YouTube.
    Si se pasan IDs concretos, se sustituyen por el reproductor en el modal.
-6. **Revisar el cierre de temporada**: `scripts/nueva-temporada.mjs` no existe todavía;
+3. **Cierre de temporada**: `scripts/nueva-temporada.mjs` no existe todavía;
    la edición 2027 ya está escrita en `estilos/temporadas.css`.
+4. **srcset** en la galería (las fotos ya están comprimidas a ~1,3 MB en total).
+
+## Hecho después de la primera lista
+
+- Noticias de la home conectadas a `/api/news`: siempre las tres más recientes.
+- `og:image` 1200x630, `sitemap.xml`, `robots.txt` y `canonical`.
+- Fotos optimizadas: 2,4 MB → 1,3 MB; la renovación ya descarga a 1400 px.
+- Móvil auditado a 390 px: sin desbordes; tabla con scroll propio y enlaces del pie con más área táctil.
+- HTML servido con `no-store` y assets versionados (`scripts/publicar.sh`).
 
 ## Aviso importante de despliegue
 
