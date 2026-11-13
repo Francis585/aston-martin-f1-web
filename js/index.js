@@ -967,14 +967,25 @@
         const fr = await fetch("../fotos.json");
         if (fr.ok) {
           const fj = await fr.json();
-          fotos = ((fj.grupos && fj.grupos.portada) || []).map((f) => f.file);
+          const año = new Date().getFullYear();
+          fotos = ((fj.grupos && fj.grupos.portada) || [])
+            .filter((f) => f && f.file)
+            .map((f) => ({ file: f.file, año: f.temporada || año }));
         }
       } catch (e) {}
+
+      /* la noticia no repite la foto que ya está en la portada */
+      const heroImg = document.querySelector(".hero-media img");
+      const heroActual = heroImg ? heroImg.src.split("/").pop().replace(".webp", "") : "";
+      const sinRepetir = fotos.filter((f) => f.file !== heroActual);
+      if (sinRepetir.length) fotos = sinRepetir;
 
       const top = data.items.slice(0, 3);
       grid.innerHTML = top
         .map((n, i) => {
-          const foto = fotos.length ? fotos[i % fotos.length] : "amr26";
+          const foto = fotos.length
+            ? fotos[i % fotos.length]
+            : { file: "amr26", año: new Date().getFullYear() };
           return (
             '<a class="news-card" href="' + escapeHtml(n.link) + '" target="_blank" rel="noopener">' +
               '<div class="news-media">' +
