@@ -3833,7 +3833,7 @@ p {
   position: absolute;
   inset: 0;
   display: flex;
-  padding: clamp(16px, 2.6vw, 30px) clamp(16px, 2.6vw, 30px) clamp(52px, 6vw, 64px);
+  padding: clamp(12px, 1.8vw, 20px) clamp(12px, 1.8vw, 20px) clamp(40px, 4.4vw, 50px);
 }
 
 .tec-svg svg {
