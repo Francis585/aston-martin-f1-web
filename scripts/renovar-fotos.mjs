@@ -148,6 +148,14 @@ for (const c of candidatas.slice(0, MAX)) {
         manifiesto.grupos[grupo].unshift(entrada);
       }
     }
+    /* si la foto es del coche, entra también en el escaparate de la ficha */
+    if (/amr|coche|car/i.test(nombre)) {
+      manifiesto.grupos.ficha = manifiesto.grupos.ficha || [];
+      if (!manifiesto.grupos.ficha.some((f) => f.file === nombre)) {
+        manifiesto.grupos.ficha.unshift(entrada);
+        manifiesto.grupos.ficha = manifiesto.grupos.ficha.slice(0, 4);
+      }
+    }
     manifiesto.creditos[nombre] = { autor: c.autor, lic: c.lic, fuente: c.fuente };
     yaFicheros.add(nombre);
     altas++;
