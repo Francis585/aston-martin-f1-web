@@ -1906,6 +1906,13 @@
       });
     }
 
+    /* vídeo concreto de cada hito, cuando existe: "año|Gran Premio" */
+    const VIDEOS = DATA.momentosVideo || {};
+    cards.forEach((c) => {
+      const clave = c.year + "|" + c.race.replace(" Grand Prix", "");
+      if (!c.video && VIDEOS[clave]) c.video = VIDEOS[clave];
+    });
+
     /* momentos editoriales (peleas, adelantamientos) que no salen de la API */
     (DATA.momentosExtra || []).forEach((m) => {
       cards.push({
@@ -1945,13 +1952,10 @@
           '<p class="moment-text">' +
           c.text +
           "</p>" +
-          '<a class="moment-search" href="' +
           (c.video
-            ? c.video
-            : "https://www.youtube.com/results?search_query=" +
-              encodeURIComponent("Aston Martin F1 " + c.year + " " + short + " adelantamiento")) +
-          '" target="_blank" rel="noopener">' +
-          '<span class="play"></span> ' + (c.video ? "Ver el vídeo" : "Buscar vídeo") + "</a>" +
+            ? '<a class="moment-search" href="' + c.video + '" target="_blank" rel="noopener">' +
+              '<span class="play"></span> Ver el vídeo</a>'
+            : "") +
           "</article>"
         );
       })

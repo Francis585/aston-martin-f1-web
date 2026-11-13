@@ -186,15 +186,20 @@
 
   var enCarrera = enFinDeSemana(gp);
 
-  /* ---------- 3. Tema ---------- */
-  if (enCarrera && gp && gp.theme) root.setAttribute("data-theme", gp.theme);
-  else root.removeAttribute("data-theme");
-
-  /* tema forzado para previsualizar: ?tema=noche | america | asia | oriente | europa | mediterraneo */
-  try {
-    var forzado = new URLSearchParams(location.search).get("tema");
+  /* ---------- 3. Tema ----------
+     El tema del GP solo viste la web de jueves a lunes. Con ?tema=noche
+     (o america, asia, oriente, europa, mediterraneo) se puede previsualizar. */
+  function aplicarTema(tema) {
+    var forzado = null;
+    try {
+      forzado = new URLSearchParams(location.search).get("tema");
+    } catch (e) {}
     if (forzado) root.setAttribute("data-theme", forzado);
-  } catch (e) {}
+    else if (tema) root.setAttribute("data-theme", tema);
+    else root.removeAttribute("data-theme");
+  }
+
+  aplicarTema(enCarrera && gp ? gp.theme : null);
 
   function pintarChip() {
     if (!chipNombre || !chipEl) return;
@@ -261,8 +266,7 @@
         info = gpActivo(hoy());
         gp = info.activo;
         enCarrera = enFinDeSemana(gp);
-        if (enCarrera && gp.theme) root.setAttribute("data-theme", gp.theme);
-        else root.removeAttribute("data-theme");
+        aplicarTema(enCarrera && gp ? gp.theme : null);
         pintarChip();
       })
       .catch(function () { /* se queda el calendario local */ });

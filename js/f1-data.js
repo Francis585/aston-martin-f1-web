@@ -26,6 +26,13 @@ window.F1_DATA = {
   /* Momentos que no salen de los resultados (peleas, adelantamientos) y que
      se añaden a mano. `video` es un enlace directo; si falta, la tarjeta
      ofrece una búsqueda. */
+  /* Vídeos concretos de hitos calculados: clave "año|Gran Premio".
+     Solo material de la propia carrera, no análisis ni resúmenes de terceros. */
+  momentosVideo: {
+    "2024|Chinese":
+      "https://www.formula1.com/en/video/dhl-fastest-lap-award-2024-chinese-grand-prix.1796946743815712140",
+  },
+
   momentosExtra: [
     {
       tipo: "Adelantamiento",
@@ -36,7 +43,7 @@ window.F1_DATA = {
       titulo: "Alonso pasa a Hamilton por fuera",
       texto:
         "Vuelta 10 en Interlagos, con la pista húmeda: Alonso se empareja con el Ferrari de Hamilton y le gana la posición por el exterior de Ferradura. Una de las maniobras del año.",
-      video: "https://www.youtube.com/watch?v=AdW2Rj7TS9w",
+      video: "https://www.formula1.com/en/video/2026-sao-paulo-grand-prix-alonso-passes-hamilton-on-the-outside-of-ferradura.1881313840534686693",
     },
     {
       tipo: "Adelantamiento",
@@ -47,7 +54,7 @@ window.F1_DATA = {
       titulo: "Duelo con Albon en el mismo punto",
       texto:
         "Un par de curvas después, el Williams de Albon se lanzó al interior en el mismo sitio. Alonso aguantó y cerró la carrera con otro adelantamiento para el recuerdo.",
-      video: "https://www.youtube.com/watch?v=1twpU3JggMA",
+      video: "https://www.youtube.com/watch?v=lkb5kqDJYXk&t=284s",
     },
   ],
 
