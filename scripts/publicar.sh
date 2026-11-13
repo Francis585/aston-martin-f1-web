@@ -3,7 +3,7 @@
 # navegador se quede con el CSS o el JS antiguos.
 set -e
 cd "$(dirname "$0")/.."
-V=$(date +%Y%m%d%H%M)
+V=$(date +%Y%m%d%H%M%S)
 for f in src/index.html src/noticias.html src/registro.html; do
   sed -i "s/?v=[0-9a-zA-Z]*/?v=$V/g" "$f"
 done
