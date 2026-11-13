@@ -373,6 +373,12 @@
 
   var bandPie = document.getElementById("bandPie");
 
+  /* qué foto ocupa la portada ahora mismo, para no repetirla en la banda */
+  function fotoPortada() {
+    if (!heroImg || !heroImg.src) return null;
+    return heroImg.src.split("/").pop().replace(/\.webp.*$/, "");
+  }
+
   /* la banda dice de cuándo es la foto que se está viendo */
   function pintarPie(fichero) {
     if (!bandPie || !fichero) return;
@@ -381,7 +387,12 @@
 
   function pintarBand() {
     if (!band || PANORAMICA.length < 2) return;
-    panIdx = (panIdx + 1) % PANORAMICA.length;
+    var actual = fotoPortada();
+    var salto = 0;
+    do {
+      panIdx = (panIdx + 1) % PANORAMICA.length;
+      salto++;
+    } while (PANORAMICA[panIdx] === actual && salto < PANORAMICA.length);
     var ruta = rutaFoto(PANORAMICA[panIdx]);
     var pre = new Image();
     pre.onload = function () {
@@ -565,10 +576,14 @@
       PANORAMICA.length = 0;
       Array.prototype.push.apply(PANORAMICA, pan);
       if (band) {
-        band.src = rutaFoto(PANORAMICA[0]);
-        pintarPie(PANORAMICA[0]);
-        band.alt = altDe(PANORAMICA[0], band.alt);
-        panIdx = 0;
+        /* arranca en una foto distinta a la que se ve en la portada */
+        var actual = fotoPortada();
+        var k = 0;
+        while (k < PANORAMICA.length - 1 && PANORAMICA[k] === actual) k++;
+        band.src = rutaFoto(PANORAMICA[k]);
+        pintarPie(PANORAMICA[k]);
+        band.alt = altDe(PANORAMICA[k], band.alt);
+        panIdx = k;
       }
     }
 
