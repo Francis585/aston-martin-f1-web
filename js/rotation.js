@@ -16,6 +16,7 @@
   /* cada foto sabe en qué carpeta vive: así el cambio de temporada es solo
      tener las imágenes nuevas en imgs/<año>/ */
   var CARPETAS = {};
+  var PIES = {};
   function rutaFoto(fichero) {
     var año = CARPETAS[fichero] || TEMPORADA_FOTOS;
     return "../imgs/" + año + "/" + fichero + ".webp";
@@ -370,6 +371,14 @@
   var carImgs = split ? [split] : [];
   var panIdx = 0;
 
+  var bandPie = document.getElementById("bandPie");
+
+  /* la banda dice de cuándo es la foto que se está viendo */
+  function pintarPie(fichero) {
+    if (!bandPie || !fichero) return;
+    bandPie.textContent = PIES[fichero] || "AMR26 · 2026";
+  }
+
   function pintarBand() {
     if (!band || PANORAMICA.length < 2) return;
     panIdx = (panIdx + 1) % PANORAMICA.length;
@@ -381,6 +390,7 @@
       setTimeout(function () {
         band.src = ruta;
         band.alt = altDe(PANORAMICA[panIdx], band.alt);
+        pintarPie(PANORAMICA[panIdx]);
         band.style.opacity = "1";
       }, 220);
     };
@@ -514,7 +524,10 @@
     VETADAS = Array.isArray(m.vetadas) ? m.vetadas : [];
     Object.keys(m.grupos).forEach(function (g) {
       (m.grupos[g] || []).forEach(function (f) {
-        if (f && f.file) CARPETAS[f.file] = f.temporada || TEMPORADA_FOTOS;
+        if (f && f.file) {
+          CARPETAS[f.file] = f.temporada || TEMPORADA_FOTOS;
+          PIES[f.file] = f.pie || "";
+        }
       });
     });
 
@@ -553,6 +566,7 @@
       Array.prototype.push.apply(PANORAMICA, pan);
       if (band) {
         band.src = rutaFoto(PANORAMICA[0]);
+        pintarPie(PANORAMICA[0]);
         band.alt = altDe(PANORAMICA[0], band.alt);
         panIdx = 0;
       }

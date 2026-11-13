@@ -6,54 +6,64 @@
       {
         "file": "2026-chinese-gp-aston-martin-lance-stroll-fp1",
         "alta": "2026-11-12",
-        "temporada": 2026
+        "temporada": 2026,
+        "pie": "GP de China · marzo 2026"
       },
       {
         "file": "amr-26-montmelo-2026",
         "alta": "2026-11-12",
-        "temporada": 2026
+        "temporada": 2026,
+        "pie": "Test de pretemporada · Montmeló, febrero 2026"
       },
       {
         "file": "2026-chinese-gp-aston-martin-fernando-alonso-fp1",
         "alta": "2026-11-12",
-        "temporada": 2026
+        "temporada": 2026,
+        "pie": "GP de China · marzo 2026"
       },
       {
         "file": "fia-f1-austria-2026-nr-14-alonso-2",
         "alta": "2026-11-13",
-        "temporada": 2026
+        "temporada": 2026,
+        "pie": "GP de Austria · junio 2026"
       },
       {
         "file": "fia-f1-austria-2026-nr-18-stroll-4",
         "alta": "2026-11-13",
-        "temporada": 2026
+        "temporada": 2026,
+        "pie": "GP de Austria · junio 2026"
       }
     ],
     "coche": [
       {
         "file": "fia-f1-austria-2026-nr-18-stroll-4",
         "alta": "2026-11-13",
-        "temporada": 2026
+        "temporada": 2026,
+        "pie": "GP de Austria · junio 2026"
       },
       {
         "file": "fia-f1-austria-2026-nr-14-alonso-2",
         "alta": "2026-11-13",
-        "temporada": 2026
+        "temporada": 2026,
+        "pie": "GP de Austria · junio 2026"
       },
       {
         "file": "amr-26-montmelo-2026",
         "alta": "2026-11-12",
-        "temporada": 2026
+        "temporada": 2026,
+        "pie": "Test de pretemporada · Montmeló, febrero 2026"
       },
       {
         "file": "2026-chinese-gp-aston-martin-lance-stroll-fp1",
         "alta": "2026-11-12",
-        "temporada": 2026
+        "temporada": 2026,
+        "pie": "GP de China · marzo 2026"
       },
       {
         "file": "2026-chinese-gp-aston-martin-fernando-alonso-fp1",
         "alta": "2026-11-12",
-        "temporada": 2026
+        "temporada": 2026,
+        "pie": "GP de China · marzo 2026"
       },
       {
         "file": "alonso-spa",
@@ -63,16 +73,30 @@
     ],
     "panoramica": [
       {
+        "file": "2026-chinese-gp-aston-martin-lance-stroll-fp1",
+        "alta": "2026-11-13",
+        "temporada": 2026,
+        "pie": "GP de China · marzo 2026"
+      },
+      {
+        "file": "amr-26-montmelo-2026",
+        "alta": "2026-11-13",
+        "temporada": 2026,
+        "pie": "Test de pretemporada · Montmeló, febrero 2026"
+      },
+      {
         "file": "amr26",
         "alta": "2026-11-13",
-        "temporada": 2026
+        "temporada": 2026,
+        "pie": "Render oficial · AMR26 2026"
       }
     ],
     "galeria": [
       {
         "file": "fia-f1-austria-2026-nr-18-stroll-4",
         "alta": "2026-11-13",
-        "temporada": 2026
+        "temporada": 2026,
+        "pie": "GP de Austria · junio 2026"
       },
       {
         "file": "fia-f1-austria-2026-nr-14-alonso-4",
@@ -82,22 +106,26 @@
       {
         "file": "fia-f1-austria-2026-nr-14-alonso-2",
         "alta": "2026-11-13",
-        "temporada": 2026
+        "temporada": 2026,
+        "pie": "GP de Austria · junio 2026"
       },
       {
         "file": "amr-26-montmelo-2026",
         "alta": "2026-11-12",
-        "temporada": 2026
+        "temporada": 2026,
+        "pie": "Test de pretemporada · Montmeló, febrero 2026"
       },
       {
         "file": "2026-chinese-gp-aston-martin-lance-stroll-fp1",
         "alta": "2026-11-12",
-        "temporada": 2026
+        "temporada": 2026,
+        "pie": "GP de China · marzo 2026"
       },
       {
         "file": "2026-chinese-gp-aston-martin-fernando-alonso-fp1",
         "alta": "2026-11-12",
-        "temporada": 2026
+        "temporada": 2026,
+        "pie": "GP de China · marzo 2026"
       },
       {
         "file": "alonso-spa",
@@ -162,7 +190,8 @@
       {
         "file": "amr26",
         "alta": "2026-11-05",
-        "temporada": 2026
+        "temporada": 2026,
+        "pie": "Render oficial · AMR26"
       },
       {
         "file": "boya",
@@ -205,13 +234,15 @@
         "file": "amr26",
         "alta": "2026-11-13",
         "temporada": 2026,
-        "encuadre": "50% 50%"
+        "encuadre": "50% 50%",
+        "pie": "Render oficial · AMR26"
       },
       {
         "file": "amr-26-montmelo-2026",
         "alta": "2026-11-13",
         "temporada": 2026,
-        "encuadre": "50% 62%"
+        "encuadre": "50% 62%",
+        "pie": "Test de pretemporada · Montmeló, febrero 2026"
       },
       {
         "file": "amr26-china",
