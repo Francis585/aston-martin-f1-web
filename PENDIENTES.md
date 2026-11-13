@@ -19,13 +19,20 @@ Repo: https://github.com/Francis585/aston-martin-f1-web (privado)
 
 1. **Retratos en la portada** (pilotos + Adrian Newey): hay fotos CC en Commons.
    Añadir un grupo `retratos` y meter 1 de cada 4 slides, con `object-position` para caras.
-2. **Vídeos de los momentos**: los 3 con enlace ya van directos al clip concreto.
-   Faltan 8 tarjetas sin vídeo propio (Bakú 2021, Mónaco 2023, Zandvoort, Austin,
-   Las Vegas, mejor temporada, remontada 2025): buscar clips oficiales de F1.
-3. **Cierre de temporada**: `scripts/nueva-temporada.mjs` no existe todavía;
-   la edición 2027 ya está escrita en `estilos/temporadas.css`.
-4. **srcset** en la galería (las fotos ya están comprimidas a ~1,3 MB en total).
-5. **Nombre del chasis 2027** (AMR27) y textos editoriales: se escriben a mano una vez al año.
+2. **srcset** en la galería (las fotos ya están comprimidas a ~1,3 MB en total).
+
+## Hecho (13/11/2026)
+
+- **Vídeos de los momentos**: las 11 tarjetas llevan enlace directo a un clip oficial de F1.
+  Nueve se añadieron hoy (2021 Bakú, 2023 Mónaco/Zandvoort/Austin/Interlagos/Las Vegas,
+  montaje de 2023, vuelta rápida 2024 y remontada 2025). Ya no queda ningún «Buscar vídeo».
+- **Cierre de temporada**: `scripts/nueva-temporada.mjs`. Cierra la ficha del año que acaba
+  (con posición y puntos reales), abre la fila de la temporada nueva con su chasis y motor,
+  crea la ficha editorial, la carpeta `imgs/<año>/` y la edición de diseño. Tiene `--simular`
+  y revierte solo si el JS queda inválido.
+- **Chasis 2027 y textos**: la ficha de 2027 (AMR27 · Honda RA627H) ya está escrita en
+  `js/f1-data.js`; no se muestra hasta que exista su fila en `seasons`, que es lo que añade
+  el script. Así no aparece un año futuro en la tabla antes de tiempo.
 
 ## Hecho después de la primera lista
 

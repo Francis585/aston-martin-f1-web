@@ -25,12 +25,32 @@ window.F1_DATA = {
 
   /* Momentos que no salen de los resultados (peleas, adelantamientos) y que
      se añaden a mano. `video` es un enlace directo; si falta, la tarjeta
-     ofrece una búsqueda. */
+     no lleva botón (nunca se manda al usuario a buscar). */
   /* Vídeos concretos de hitos calculados: clave "año|Gran Premio".
      Solo material de la propia carrera, no análisis ni resúmenes de terceros. */
   momentosVideo: {
+    /* 2021 — el primer podio de la era Aston Martin */
+    "2021|Azerbaijan":
+      "https://www.formula1.com/en/video/2021-azerbaijan-grand-prix-vettel-claims-first-podium-with-aston-martin-in-baku.1701828514483694822",
+    /* 2023 — la temporada de los ocho podios */
+    "2023|Monaco":
+      "https://www.formula1.com/en/video/race-highlights-2023-monaco-grand-prix.1767154702935308839",
+    "2023|Dutch":
+      "https://www.formula1.com/en/video/the-car-was-alive-alonso-eyeing-win-in-2023-after-another-podium-at-zandvoort.1775402632265805193",
+    "2023|United States":
+      "https://www.formula1.com/en/video/race-highlights-2023-united-states-grand-prix.1780492142037138626",
+    "2023|São Paulo":
+      "https://www.formula1.com/en/video/2023-sao-paulo-grand-prix-alonso-just-beats-perez-to-the-line-after-thrilling-battle-for-p3.1781753269483100530",
+    "2023|Las Vegas":
+      "https://www.formula1.com/en/video/race-highlights-2023-las-vegas-grand-prix.1782983216069533007",
+    /* tarjeta de temporada: la clave lleva el año y la carrera vacía */
+    "2023|":
+      "https://www.formula1.com/en/video/formula-1-2023-season-montage.1783825142320650642",
+    /* 2024 y 2025 */
     "2024|Chinese":
       "https://www.formula1.com/en/video/dhl-fastest-lap-award-2024-chinese-grand-prix.1796946743815712140",
+    "2025|Dutch":
+      "https://www.formula1.com/en/video/race-highlights-2025-dutch-grand-prix.1841986858440849937",
   },
 
   momentosExtra: [
@@ -98,6 +118,21 @@ window.F1_DATA = {
      generan a partir de aquí: al añadir un año nuevo, se añade su ficha
      y desaparece la necesidad de tocar el HTML. */
   seasonNotes: {
+    2027: {
+      title: "2027 · AMR27",
+      body: [
+        "Segunda temporada del ciclo Honda. El AMR27 no es una revolución: es la primera oportunidad real de afinar. Con la unidad de potencia RA627H ya rodada un año completo, el invierno se puede dedicar entero a la aerodinámica, que es donde el equipo se quedó corto en 2026.",
+        "Adrian Newey firma su segundo coche en Silverstone con una idea distinta a la del primero: menos carga total y más eficiencia en recta, pensada para circuitos de perfil medio. El objetivo del equipo es instalarse en la zona de puntos de forma regular y dejar de depender de carreras caóticas para sumar.",
+        "Los datos de esta ficha se actualizan solos con la API según avance el campeonato; el texto se revisa a mano al cerrar el año.",
+      ],
+      facts: [
+        ["Chasis", "AMR27"],
+        ["Motor", "Honda RA627H"],
+        ["Pilotos", "Alonso · Stroll"],
+        ["Team Principal", "Adrian Newey"],
+        ["Reglamento", "Técnico 2026, segundo año"],
+      ],
+    },
     2026: {
       title: "2026 · AMR26",
       body: [
