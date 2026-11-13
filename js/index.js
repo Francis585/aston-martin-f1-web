@@ -119,6 +119,15 @@
       );
 
       revealItems.forEach((el) => io.observe(el));
+
+      /* red de seguridad: si el observer no llega a dispararse (scroll muy
+         rápido, salto por ancla o pestaña en segundo plano), el contenido
+         nunca puede quedarse invisible */
+      setTimeout(function () {
+        revealItems.forEach(function (el) {
+          if (!el.classList.contains("is-visible")) el.classList.add("is-visible");
+        });
+      }, 2500);
     }
   }
 
