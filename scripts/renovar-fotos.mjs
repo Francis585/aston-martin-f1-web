@@ -193,7 +193,7 @@ for (const c of candidatas.slice(0, MAX)) {
     }
 
     /* si la foto es del coche, entra también en el escaparate de la ficha */
-    if (/amr|coche|car/i.test(nombre)) {
+    if (/motor|engine/i.test(nombre)) {
       manifiesto.grupos.ficha = manifiesto.grupos.ficha || [];
       if (!manifiesto.grupos.ficha.some((f) => f.file === nombre)) {
         manifiesto.grupos.ficha.unshift(entrada);
