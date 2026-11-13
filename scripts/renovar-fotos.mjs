@@ -120,7 +120,7 @@ function parecido(a, b) {
 }
 
 function convertir(origen, destino) {
-  execFileSync(FF, ["-y", "-loglevel", "error", "-i", origen, "-vf", "scale=1600:-2", "-quality", "80", destino]);
+  execFileSync(FF, ["-y", "-loglevel", "error", "-i", origen, "-vf", "scale=1400:-2", "-quality", "72", destino]);
 }
 
 if (!existsSync(carpeta)) mkdirSync(carpeta, { recursive: true });
