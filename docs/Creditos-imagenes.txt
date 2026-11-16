@@ -23,5 +23,23 @@ Se actualiza en cada renovación automática.
   https://commons.wikimedia.org/wiki/File:2026_Chinese_GP_-_Aston_Martin_-_AMR26.jpg
 - imgs/2026/amr26-zandvoort.webp — Steffen Prößdorf (CC BY-SA 4.0)
   https://commons.wikimedia.org/wiki/File:2026-08-23_Motorsport,_Formel_1,_Großer_Preis_der_Niederlande_2026_STP_2912.jpg
+- imgs/2026/aston-martin-f1-car-55382810627.webp — Jason Puddephatt (CC BY-SA 4.0)
+  https://commons.wikimedia.org/wiki/File:Aston_Martin_F1_Car_(55382810627).jpg
+- imgs/2026/f1-2026-aston-martin-f1-team-aston-martin-amr26-.webp — Der Alf (CC BY 4.0)
+  https://commons.wikimedia.org/wiki/File:F1_2026,_Aston_Martin_F1_Team,_Aston_Martin_AMR26,_Lance_Stroll,_Spa_Francorchamps_(55424594532).jpg
+- imgs/2026/fia-f1-austria-2026-nr-14-alonso-2.webp — Lukas Raich (CC BY-SA 4.0)
+  https://commons.wikimedia.org/wiki/File:FIA_F1_Austria_2026_Nr._14_Alonso_(2).jpg
+- imgs/2026/fia-f1-austria-2026-nr-14-alonso-4.webp — Lukas Raich (CC BY-SA 4.0)
+  https://commons.wikimedia.org/wiki/File:FIA_F1_Austria_2026_Nr._14_Alonso_(4).jpg
+- imgs/2026/fia-f1-austria-2026-nr-18-stroll-4.webp — Lukas Raich (CC BY-SA 4.0)
+  https://commons.wikimedia.org/wiki/File:FIA_F1_Austria_2026_Nr._18_Stroll_(4).jpg
+- imgs/2026/fia-f1-austria-2026-nr-34-crawford-1.webp — Lukas Raich (CC BY-SA 4.0)
+  https://commons.wikimedia.org/wiki/File:FIA_F1_Austria_2026_Nr._34_Crawford_(1).jpg
+- imgs/2026/fia-f1-austria-2026-nr-34-crawford-2.webp — Lukas Raich (CC BY-SA 4.0)
+  https://commons.wikimedia.org/wiki/File:FIA_F1_Austria_2026_Nr._34_Crawford_(2).jpg
+- imgs/2026/motor-honda-ra621h.webp — Tokumeigakarinoaoshima (CC BY-SA 4.0)
+  https://commons.wikimedia.org/wiki/File:Honda_RA621H_engine.jpg
+- imgs/2026/motor-honda-ra621h-galeria.webp — Liauzh (CC BY-SA 4.0)
+  https://commons.wikimedia.org/wiki/File:Honda_Racing_Gallery_-_Honda_RA621H.jpg
 - imgs/2026/stroll-austria-1.webp — Lukas Raich (CC BY-SA 4.0)
   https://commons.wikimedia.org/wiki/File:FIA_F1_Austria_2026_Nr._18_Stroll_(3).jpg

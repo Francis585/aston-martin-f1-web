@@ -4,6 +4,30 @@
   "grupos": {
     "portada": [
       {
+        "file": "f1-2026-aston-martin-f1-team-aston-martin-amr26-",
+        "alta": "2026-11-16",
+        "temporada": 2026,
+        "pie": "F1 2026, Aston Martin F1 Team, Aston Martin AMR26, Lance Stroll, Spa F"
+      },
+      {
+        "file": "aston-martin-f1-car-55382810627",
+        "alta": "2026-11-16",
+        "temporada": 2026,
+        "pie": "British Grand Prix 2026 Silverstone"
+      },
+      {
+        "file": "fia-f1-austria-2026-nr-34-crawford-2",
+        "alta": "2026-11-16",
+        "temporada": 2026,
+        "pie": "FIA F1 Austria 2026 Nr. 34 Crawford (2)"
+      },
+      {
+        "file": "fia-f1-austria-2026-nr-34-crawford-1",
+        "alta": "2026-11-16",
+        "temporada": 2026,
+        "pie": "FIA F1 Austria 2026 Nr. 34 Crawford (1)"
+      },
+      {
         "file": "2026-chinese-gp-aston-martin-lance-stroll-fp1",
         "alta": "2026-11-12",
         "temporada": 2026,
@@ -14,28 +38,34 @@
         "alta": "2026-11-12",
         "temporada": 2026,
         "pie": "Test de pretemporada · Montmeló, febrero 2026"
-      },
-      {
-        "file": "2026-chinese-gp-aston-martin-fernando-alonso-fp1",
-        "alta": "2026-11-12",
-        "temporada": 2026,
-        "pie": "GP de China · marzo 2026"
-      },
-      {
-        "file": "fia-f1-austria-2026-nr-14-alonso-2",
-        "alta": "2026-11-13",
-        "temporada": 2026,
-        "pie": "GP de Austria · junio 2026"
-      },
-      {
-        "file": "fia-f1-austria-2026-nr-18-stroll-4",
-        "alta": "2026-11-13",
-        "temporada": 2026,
-        "pie": "GP de Austria · junio 2026"
       }
     ],
     "coche": [
       {
+        "file": "f1-2026-aston-martin-f1-team-aston-martin-amr26-",
+        "alta": "2026-11-16",
+        "temporada": 2026,
+        "pie": "F1 2026, Aston Martin F1 Team, Aston Martin AMR26, Lance Stroll, Spa F"
+      },
+      {
+        "file": "aston-martin-f1-car-55382810627",
+        "alta": "2026-11-16",
+        "temporada": 2026,
+        "pie": "British Grand Prix 2026 Silverstone"
+      },
+      {
+        "file": "fia-f1-austria-2026-nr-34-crawford-2",
+        "alta": "2026-11-16",
+        "temporada": 2026,
+        "pie": "FIA F1 Austria 2026 Nr. 34 Crawford (2)"
+      },
+      {
+        "file": "fia-f1-austria-2026-nr-34-crawford-1",
+        "alta": "2026-11-16",
+        "temporada": 2026,
+        "pie": "FIA F1 Austria 2026 Nr. 34 Crawford (1)"
+      },
+      {
         "file": "fia-f1-austria-2026-nr-18-stroll-4",
         "alta": "2026-11-13",
         "temporada": 2026,
@@ -58,20 +88,15 @@
         "alta": "2026-11-12",
         "temporada": 2026,
         "pie": "GP de China · marzo 2026"
-      },
-      {
-        "file": "2026-chinese-gp-aston-martin-fernando-alonso-fp1",
-        "alta": "2026-11-12",
-        "temporada": 2026,
-        "pie": "GP de China · marzo 2026"
-      },
-      {
-        "file": "alonso-spa",
-        "alta": "2026-11-12",
-        "temporada": 2026
       }
     ],
     "panoramica": [
+      {
+        "file": "f1-2026-aston-martin-f1-team-aston-martin-amr26-",
+        "alta": "2026-11-16",
+        "temporada": 2026,
+        "pie": "F1 2026, Aston Martin F1 Team, Aston Martin AMR26, Lance Stroll, Spa F"
+      },
       {
         "file": "2026-chinese-gp-aston-martin-lance-stroll-fp1",
         "alta": "2026-11-13",
@@ -83,15 +108,33 @@
         "alta": "2026-11-13",
         "temporada": 2026,
         "pie": "Test de pretemporada · Montmeló, febrero 2026"
-      },
-      {
-        "file": "amr26",
-        "alta": "2026-11-13",
-        "temporada": 2026,
-        "pie": "Render oficial · AMR26 2026"
       }
     ],
     "galeria": [
+      {
+        "file": "f1-2026-aston-martin-f1-team-aston-martin-amr26-",
+        "alta": "2026-11-16",
+        "temporada": 2026,
+        "pie": "F1 2026, Aston Martin F1 Team, Aston Martin AMR26, Lance Stroll, Spa F"
+      },
+      {
+        "file": "aston-martin-f1-car-55382810627",
+        "alta": "2026-11-16",
+        "temporada": 2026,
+        "pie": "British Grand Prix 2026 Silverstone"
+      },
+      {
+        "file": "fia-f1-austria-2026-nr-34-crawford-2",
+        "alta": "2026-11-16",
+        "temporada": 2026,
+        "pie": "FIA F1 Austria 2026 Nr. 34 Crawford (2)"
+      },
+      {
+        "file": "fia-f1-austria-2026-nr-34-crawford-1",
+        "alta": "2026-11-16",
+        "temporada": 2026,
+        "pie": "FIA F1 Austria 2026 Nr. 34 Crawford (1)"
+      },
       {
         "file": "fia-f1-austria-2026-nr-18-stroll-4",
         "alta": "2026-11-13",
@@ -337,6 +380,26 @@
       "autor": "Liauzh",
       "lic": "CC BY-SA 4.0",
       "fuente": "https://commons.wikimedia.org/wiki/File:Honda_Racing_Gallery_-_Honda_RA621H.jpg"
+    },
+    "fia-f1-austria-2026-nr-34-crawford-1": {
+      "autor": "Lukas Raich",
+      "lic": "CC BY-SA 4.0",
+      "fuente": "https://commons.wikimedia.org/wiki/File:FIA_F1_Austria_2026_Nr._34_Crawford_(1).jpg"
+    },
+    "fia-f1-austria-2026-nr-34-crawford-2": {
+      "autor": "Lukas Raich",
+      "lic": "CC BY-SA 4.0",
+      "fuente": "https://commons.wikimedia.org/wiki/File:FIA_F1_Austria_2026_Nr._34_Crawford_(2).jpg"
+    },
+    "aston-martin-f1-car-55382810627": {
+      "autor": "Jason Puddephatt",
+      "lic": "CC BY-SA 4.0",
+      "fuente": "https://commons.wikimedia.org/wiki/File:Aston_Martin_F1_Car_(55382810627).jpg"
+    },
+    "f1-2026-aston-martin-f1-team-aston-martin-amr26-": {
+      "autor": "Der Alf",
+      "lic": "CC BY 4.0",
+      "fuente": "https://commons.wikimedia.org/wiki/File:F1_2026,_Aston_Martin_F1_Team,_Aston_Martin_AMR26,_Lance_Stroll,_Spa_Francorchamps_(55424594532).jpg"
     }
   },
   "vetadas": [
