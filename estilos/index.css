@@ -537,9 +537,9 @@ p {
   background: linear-gradient(
       100deg,
       rgba(4, 18, 15, 0.97) 0%,
-      rgba(4, 18, 15, 0.9) 34%,
-      rgba(4, 18, 15, 0.45) 62%,
-      rgba(4, 18, 15, 0.7) 100%
+      rgba(4, 18, 15, 0.94) 38%,
+      rgba(4, 18, 15, 0.55) 66%,
+      rgba(4, 18, 15, 0.72) 100%
     ),
     linear-gradient(0deg, var(--ink) 0%, transparent 32%);
 }

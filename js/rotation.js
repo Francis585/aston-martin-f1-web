@@ -559,7 +559,8 @@
       pool.length = 0;
       Array.prototype.push.apply(pool, p);
       /* cada día empieza por una foto distinta: no siempre el mismo piloto */
-      poolIdx = dia % pool.length;
+      /* la primera foto del pool es la mejor: la portada abre con ella */
+      poolIdx = 0;
       pintarContador();
     }
     if (c.length) {

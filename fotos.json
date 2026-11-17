@@ -4,40 +4,24 @@
   "grupos": {
     "portada": [
       {
+        "file": "alonso-japon",
+        "alta": "2026-11-13",
+        "temporada": 2026
+      },
+      {
         "file": "f1-2026-aston-martin-f1-team-aston-martin-amr26-",
-        "alta": "2026-11-16",
-        "temporada": 2026,
-        "pie": "F1 2026, Aston Martin F1 Team, Aston Martin AMR26, Lance Stroll, Spa F"
+        "alta": "2026-11-13",
+        "temporada": 2026
       },
       {
-        "file": "aston-martin-f1-car-55382810627",
-        "alta": "2026-11-16",
-        "temporada": 2026,
-        "pie": "British Grand Prix 2026 Silverstone"
+        "file": "alonso-spa",
+        "alta": "2026-11-13",
+        "temporada": 2026
       },
       {
-        "file": "fia-f1-austria-2026-nr-34-crawford-2",
-        "alta": "2026-11-16",
-        "temporada": 2026,
-        "pie": "FIA F1 Austria 2026 Nr. 34 Crawford (2)"
-      },
-      {
-        "file": "fia-f1-austria-2026-nr-34-crawford-1",
-        "alta": "2026-11-16",
-        "temporada": 2026,
-        "pie": "FIA F1 Austria 2026 Nr. 34 Crawford (1)"
-      },
-      {
-        "file": "2026-chinese-gp-aston-martin-lance-stroll-fp1",
-        "alta": "2026-11-12",
-        "temporada": 2026,
-        "pie": "GP de China · marzo 2026"
-      },
-      {
-        "file": "amr-26-montmelo-2026",
-        "alta": "2026-11-12",
-        "temporada": 2026,
-        "pie": "Test de pretemporada · Montmeló, febrero 2026"
+        "file": "alonso-bahrain",
+        "alta": "2026-11-13",
+        "temporada": 2026
       }
     ],
     "coche": [
@@ -92,12 +76,6 @@
     ],
     "panoramica": [
       {
-        "file": "f1-2026-aston-martin-f1-team-aston-martin-amr26-",
-        "alta": "2026-11-16",
-        "temporada": 2026,
-        "pie": "F1 2026, Aston Martin F1 Team, Aston Martin AMR26, Lance Stroll, Spa F"
-      },
-      {
         "file": "2026-chinese-gp-aston-martin-lance-stroll-fp1",
         "alta": "2026-11-13",
         "temporada": 2026,
@@ -108,15 +86,15 @@
         "alta": "2026-11-13",
         "temporada": 2026,
         "pie": "Test de pretemporada · Montmeló, febrero 2026"
+      },
+      {
+        "file": "amr26",
+        "alta": "2026-11-13",
+        "temporada": 2026,
+        "pie": "Render oficial · AMR26 2026"
       }
     ],
     "galeria": [
-      {
-        "file": "f1-2026-aston-martin-f1-team-aston-martin-amr26-",
-        "alta": "2026-11-16",
-        "temporada": 2026,
-        "pie": "F1 2026, Aston Martin F1 Team, Aston Martin AMR26, Lance Stroll, Spa F"
-      },
       {
         "file": "aston-martin-f1-car-55382810627",
         "alta": "2026-11-16",
@@ -153,35 +131,13 @@
         "pie": "GP de Austria · junio 2026"
       },
       {
-        "file": "amr-26-montmelo-2026",
-        "alta": "2026-11-12",
-        "temporada": 2026,
-        "pie": "Test de pretemporada · Montmeló, febrero 2026"
-      },
-      {
-        "file": "2026-chinese-gp-aston-martin-lance-stroll-fp1",
-        "alta": "2026-11-12",
-        "temporada": 2026,
-        "pie": "GP de China · marzo 2026"
-      },
-      {
         "file": "2026-chinese-gp-aston-martin-fernando-alonso-fp1",
         "alta": "2026-11-12",
         "temporada": 2026,
         "pie": "GP de China · marzo 2026"
       },
       {
-        "file": "alonso-spa",
-        "alta": "2026-11-12",
-        "temporada": 2026
-      },
-      {
         "file": "amr26-zandvoort",
-        "alta": "2026-11-12",
-        "temporada": 2026
-      },
-      {
-        "file": "alonso-bahrain",
         "alta": "2026-11-12",
         "temporada": 2026
       },
@@ -231,19 +187,8 @@
         "temporada": 2026
       },
       {
-        "file": "amr26",
-        "alta": "2026-11-05",
-        "temporada": 2026,
-        "pie": "Render oficial · AMR26"
-      },
-      {
         "file": "boya",
         "alta": "2026-11-05",
-        "temporada": 2026
-      },
-      {
-        "file": "alonso-japon",
-        "alta": "2026-03-29",
         "temporada": 2026
       },
       {
