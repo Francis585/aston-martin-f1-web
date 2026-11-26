@@ -3,6 +3,8 @@ CRÉDITOS DE IMÁGENES
 Fotografías incorporadas desde Wikimedia Commons con licencia libre.
 Se actualiza en cada renovación automática.
 
+- imgs/2026/2023-aston-martin-vantage-roadster-f1-edition.webp — Chanokchon (CC BY-SA 4.0)
+  https://commons.wikimedia.org/wiki/File:2023_Aston_Martin_Vantage_Roadster_F1_Edition.jpg
 - imgs/2026/2026-chinese-gp-aston-martin-fernando-alonso-fp1.webp — Liauzh (CC BY 4.0)
   https://commons.wikimedia.org/wiki/File:2026_Chinese_GP_-_Aston_Martin_-_Fernando_Alonso_-_FP1.jpg
 - imgs/2026/2026-chinese-gp-aston-martin-lance-stroll-fp1.webp — Liauzh (CC BY 4.0)
@@ -41,5 +43,11 @@ Se actualiza en cada renovación automática.
   https://commons.wikimedia.org/wiki/File:Honda_RA621H_engine.jpg
 - imgs/2026/motor-honda-ra621h-galeria.webp — Liauzh (CC BY-SA 4.0)
   https://commons.wikimedia.org/wiki/File:Honda_Racing_Gallery_-_Honda_RA621H.jpg
+- imgs/2026/p1015962-dxo-55596183953.webp — Shelby Lee (CC BY-SA 4.0)
+  https://commons.wikimedia.org/wiki/File:P1015962_DxO_(55596183953).jpg
+- imgs/2026/p1024308-dxo-55596073206.webp — Shelby Lee (CC BY-SA 4.0)
+  https://commons.wikimedia.org/wiki/File:P1024308_DxO_(55596073206).jpg
+- imgs/2026/p1024318-dxo-55596184363.webp — Shelby Lee (CC BY-SA 4.0)
+  https://commons.wikimedia.org/wiki/File:P1024318_DxO_(55596184363).jpg
 - imgs/2026/stroll-austria-1.webp — Lukas Raich (CC BY-SA 4.0)
   https://commons.wikimedia.org/wiki/File:FIA_F1_Austria_2026_Nr._18_Stroll_(3).jpg

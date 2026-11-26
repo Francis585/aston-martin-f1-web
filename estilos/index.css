@@ -3857,3 +3857,51 @@ p {
     animation: none;
   }
 }
+
+
+/* ==========================================================================
+   MARCA DE AUTORÍA — sello en esquina, marca de agua en fotos, pie legal
+   ========================================================================== */
+.fh-mark {
+  position: fixed; right: 14px; bottom: 14px; z-index: 120;
+  display: inline-flex; align-items: center; gap: 7px;
+  padding: 6px 10px 6px 8px; border-radius: 999px;
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  background: rgba(4, 18, 15, 0.74);
+  backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px);
+  font-family: var(--font-body); font-size: 10px; letter-spacing: 0.1em;
+  text-transform: uppercase; color: rgba(242, 244, 239, 0.66);
+  pointer-events: none; user-select: none;
+}
+.fh-mark b { font-weight: 600; letter-spacing: 0.08em; color: rgba(242, 244, 239, 0.86); }
+.fh-mark i { font-style: normal; opacity: 0.6; letter-spacing: 0.12em; }
+.fh-mark-dot { width: 6px; height: 6px; border-radius: 50%; background: var(--lime); flex: 0 0 auto; }
+@media (max-width: 720px) {
+  .fh-mark { right: 8px; bottom: 8px; font-size: 8.5px; padding: 5px 8px 5px 7px; gap: 6px; }
+  .fh-mark i { display: none; }
+}
+
+/* marca de agua tenue sobre las fotos */
+/* marca de agua sobre las fotos: capa real, no pseudo (el velo la tapaba) */
+.wm-layer {
+  position: absolute; inset: 0 0 0 44%; pointer-events: none; z-index: 5;
+  background-image: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0naHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmcnIHdpZHRoPSc0MjAnIGhlaWdodD0nMjYwJz48ZyBmaWxsPScjZmZmZmZmJyBmaWxsLW9wYWNpdHk9Jy41NScgZm9udC1mYW1pbHk9J21vbm9zcGFjZScgZm9udC1zaXplPScyNicgbGV0dGVyLXNwYWNpbmc9JzYnPjx0ZXh0IHg9JzEwJyB5PSc3MCcgdHJhbnNmb3JtPSdyb3RhdGUoLTI0IDEwIDcwKSc+QVNUT04gTUFSVElOIMKpIEZIPC90ZXh0Pjx0ZXh0IHg9JzIxNScgeT0nMjA1JyB0cmFuc2Zvcm09J3JvdGF0ZSgtMjQgMjE1IDIwNSknPkFTVE9OIE1BUlRJTiDCqSBGSDwvdGV4dD48L2c+PC9zdmc+");
+  background-repeat: repeat; background-size: 420px 260px; opacity: .09;
+}
+@media (max-width: 900px) { .wm-layer { inset: 0; opacity: .08; } }
+
+/* línea legal en el pie */
+.foot-legal {
+  margin-top: 12px; padding-top: 12px; border-top: 1px solid var(--line);
+  font-size: 12px; line-height: 1.6; color: var(--muted-2); max-width: 90ch;
+}
+.foot-legal a { color: var(--muted); text-decoration: underline; text-underline-offset: 2px; }
+.foot-legal a:hover { color: var(--paper); }
+
+/* en pantallas pequeñas el sello se acorta */
+.fh-short { display: none; }
+@media (max-width: 720px) {
+  .fh-long { display: none; }
+  .fh-short { display: inline; }
+  .fh-mark { max-width: calc(100vw - 24px); white-space: nowrap; }
+}

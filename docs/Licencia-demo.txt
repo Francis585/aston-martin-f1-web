@@ -1,0 +1,12 @@
+ASTON MARTIN F1 — demo original de Francisco Hernández Martín (Salamanca, España).
+Copyright (c) 2026. Todos los derechos reservados.
+
+El diseño, el código, los textos y la maquetación de esta demo son obra de su autor y
+se publican como muestra de portafolio. Se permite enlazar y citar con atribución
+visible; no se autoriza la copia, réplica o presentación como propia, total ni parcial,
+sin permiso escrito.
+
+Proyecto académico sin ánimo de lucro. Marcas, nombres y fotografías de Aston Martin
+pertenecen a sus titulares; los créditos de imagen están en docs/Creditos-imagenes.txt.
+
+Contacto: github.com/Francis585

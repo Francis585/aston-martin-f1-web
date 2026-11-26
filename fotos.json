@@ -4,6 +4,24 @@
   "grupos": {
     "portada": [
       {
+        "file": "p1024318-dxo-55596184363",
+        "alta": "2026-11-23",
+        "temporada": 2026,
+        "pie": "Aston Martin AMR26 de Fernando Alonso en el Honda Collection Hall (III)"
+      },
+      {
+        "file": "p1015962-dxo-55596183953",
+        "alta": "2026-11-23",
+        "temporada": 2026,
+        "pie": "Aston Martin AMR26 de Fernando Alonso en el Honda Collection Hall (II)"
+      },
+      {
+        "file": "p1024308-dxo-55596073206",
+        "alta": "2026-11-23",
+        "temporada": 2026,
+        "pie": "Aston Martin AMR26 de Fernando Alonso en el Honda Collection Hall (I)"
+      },
+      {
         "file": "alonso-japon",
         "alta": "2026-11-13",
         "temporada": 2026
@@ -12,19 +30,27 @@
         "file": "f1-2026-aston-martin-f1-team-aston-martin-amr26-",
         "alta": "2026-11-13",
         "temporada": 2026
-      },
-      {
-        "file": "alonso-spa",
-        "alta": "2026-11-13",
-        "temporada": 2026
-      },
-      {
-        "file": "alonso-bahrain",
-        "alta": "2026-11-13",
-        "temporada": 2026
       }
     ],
     "coche": [
+      {
+        "file": "p1024318-dxo-55596184363",
+        "alta": "2026-11-23",
+        "temporada": 2026,
+        "pie": "Aston Martin AMR26 de Fernando Alonso en el Honda Collection Hall (III)"
+      },
+      {
+        "file": "p1015962-dxo-55596183953",
+        "alta": "2026-11-23",
+        "temporada": 2026,
+        "pie": "Aston Martin AMR26 de Fernando Alonso en el Honda Collection Hall (II)"
+      },
+      {
+        "file": "p1024308-dxo-55596073206",
+        "alta": "2026-11-23",
+        "temporada": 2026,
+        "pie": "Aston Martin AMR26 de Fernando Alonso en el Honda Collection Hall (I)"
+      },
       {
         "file": "f1-2026-aston-martin-f1-team-aston-martin-amr26-",
         "alta": "2026-11-16",
@@ -48,30 +74,6 @@
         "alta": "2026-11-16",
         "temporada": 2026,
         "pie": "FIA F1 Austria 2026 Nr. 34 Crawford (1)"
-      },
-      {
-        "file": "fia-f1-austria-2026-nr-18-stroll-4",
-        "alta": "2026-11-13",
-        "temporada": 2026,
-        "pie": "GP de Austria · junio 2026"
-      },
-      {
-        "file": "fia-f1-austria-2026-nr-14-alonso-2",
-        "alta": "2026-11-13",
-        "temporada": 2026,
-        "pie": "GP de Austria · junio 2026"
-      },
-      {
-        "file": "amr-26-montmelo-2026",
-        "alta": "2026-11-12",
-        "temporada": 2026,
-        "pie": "Test de pretemporada · Montmeló, febrero 2026"
-      },
-      {
-        "file": "2026-chinese-gp-aston-martin-lance-stroll-fp1",
-        "alta": "2026-11-12",
-        "temporada": 2026,
-        "pie": "GP de China · marzo 2026"
       }
     ],
     "panoramica": [
@@ -95,6 +97,24 @@
       }
     ],
     "galeria": [
+      {
+        "file": "p1024318-dxo-55596184363",
+        "alta": "2026-11-23",
+        "temporada": 2026,
+        "pie": "Aston Martin AMR26 de Fernando Alonso en el Honda Collection Hall (III)"
+      },
+      {
+        "file": "p1015962-dxo-55596183953",
+        "alta": "2026-11-23",
+        "temporada": 2026,
+        "pie": "Aston Martin AMR26 de Fernando Alonso en el Honda Collection Hall (II)"
+      },
+      {
+        "file": "p1024308-dxo-55596073206",
+        "alta": "2026-11-23",
+        "temporada": 2026,
+        "pie": "Aston Martin AMR26 de Fernando Alonso en el Honda Collection Hall (I)"
+      },
       {
         "file": "aston-martin-f1-car-55382810627",
         "alta": "2026-11-16",
@@ -215,6 +235,12 @@
         "file": "stroll-australia",
         "alta": "2026-03-08",
         "temporada": 2026
+      },
+      {
+        "file": "2023-aston-martin-vantage-roadster-f1-edition",
+        "alta": "2026-11-23",
+        "temporada": 2026,
+        "pie": "Aston Martin Vantage Roadster F1 Edition (Bangkok)"
       }
     ],
     "ficha": [
@@ -345,6 +371,26 @@
       "autor": "Der Alf",
       "lic": "CC BY 4.0",
       "fuente": "https://commons.wikimedia.org/wiki/File:F1_2026,_Aston_Martin_F1_Team,_Aston_Martin_AMR26,_Lance_Stroll,_Spa_Francorchamps_(55424594532).jpg"
+    },
+    "p1024308-dxo-55596073206": {
+      "autor": "Shelby Lee",
+      "lic": "CC BY-SA 4.0",
+      "fuente": "https://commons.wikimedia.org/wiki/File:P1024308_DxO_(55596073206).jpg"
+    },
+    "p1015962-dxo-55596183953": {
+      "autor": "Shelby Lee",
+      "lic": "CC BY-SA 4.0",
+      "fuente": "https://commons.wikimedia.org/wiki/File:P1015962_DxO_(55596183953).jpg"
+    },
+    "p1024318-dxo-55596184363": {
+      "autor": "Shelby Lee",
+      "lic": "CC BY-SA 4.0",
+      "fuente": "https://commons.wikimedia.org/wiki/File:P1024318_DxO_(55596184363).jpg"
+    },
+    "2023-aston-martin-vantage-roadster-f1-edition": {
+      "autor": "Chanokchon",
+      "lic": "CC BY-SA 4.0",
+      "fuente": "https://commons.wikimedia.org/wiki/File:2023_Aston_Martin_Vantage_Roadster_F1_Edition.jpg"
     }
   },
   "vetadas": [
