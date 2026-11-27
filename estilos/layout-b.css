@@ -239,3 +239,18 @@
     border-top: 1px solid var(--line);
   }
 }
+
+
+/* ---------- atribución de imágenes ---------- */
+.attr{margin-top:26px;padding-top:16px;border-top:1px solid rgba(255,255,255,.14)}
+.attr summary{cursor:pointer;list-style:none;font-family:inherit;font-size:10px;letter-spacing:.16em;text-transform:uppercase;opacity:.72;display:flex;align-items:center;gap:9px}
+.attr summary::-webkit-details-marker{display:none}
+.attr summary::before{content:"+";font-size:13px;line-height:1;color:#E5401E}
+.attr[open] summary::before{content:"–"}
+.attr summary:hover{opacity:1}
+.attr ul{margin:14px 0 0;padding:0;list-style:none;columns:2;column-gap:34px}
+.attr li{break-inside:avoid;font-size:10px;line-height:1.9;letter-spacing:.02em;opacity:.66}
+.attr li a{color:inherit;text-decoration:none;border-bottom:1px solid transparent}
+.attr li a:hover{border-bottom-color:#E5401E;opacity:1}
+.attr-note{margin-top:12px;font-size:9.5px;line-height:1.8;opacity:.5}
+@media (max-width:760px){ .attr ul{columns:1} .attr li{font-size:11px} }
